@@ -1,0 +1,521 @@
+{
+  "date": "2026-06-03",
+  "title": "Report for Jun 3, 2026",
+  "generatedAt": "2026-06-12T06:37:05.825Z",
+  "dataStart": "2026-02-25",
+  "dataEnd": "2026-06-02",
+  "topups": [
+    {
+      "date": "2026-02-25",
+      "amount": 495.15
+    },
+    {
+      "date": "2026-03-03",
+      "amount": 495.79
+    },
+    {
+      "date": "2026-03-09",
+      "amount": 495.44
+    },
+    {
+      "date": "2026-03-13",
+      "amount": 496.13
+    },
+    {
+      "date": "2026-03-19",
+      "amount": 496.61
+    },
+    {
+      "date": "2026-03-23",
+      "amount": 495.87
+    },
+    {
+      "date": "2026-03-25",
+      "amount": 995.92
+    },
+    {
+      "date": "2026-04-01",
+      "amount": 995.23
+    },
+    {
+      "date": "2026-04-07",
+      "amount": 995.37
+    },
+    {
+      "date": "2026-04-14",
+      "amount": 996.58
+    },
+    {
+      "date": "2026-04-17",
+      "amount": 997.65
+    },
+    {
+      "date": "2026-04-22",
+      "amount": 995.53
+    },
+    {
+      "date": "2026-04-24",
+      "amount": 995.06
+    },
+    {
+      "date": "2026-04-29",
+      "amount": 995.3
+    },
+    {
+      "date": "2026-05-02",
+      "amount": 995.31
+    },
+    {
+      "date": "2026-05-06",
+      "amount": 995.88
+    },
+    {
+      "date": "2026-05-08",
+      "amount": 995.17
+    },
+    {
+      "date": "2026-05-11",
+      "amount": 997.8
+    },
+    {
+      "date": "2026-05-13",
+      "amount": 995.69
+    },
+    {
+      "date": "2026-05-14",
+      "amount": 995.27
+    },
+    {
+      "date": "2026-05-18",
+      "amount": 731.69
+    },
+    {
+      "date": "2026-05-18",
+      "amount": 995.14
+    },
+    {
+      "date": "2026-05-20",
+      "amount": 997.74
+    },
+    {
+      "date": "2026-05-22",
+      "amount": 995.6
+    },
+    {
+      "date": "2026-05-26",
+      "amount": 1001.68
+    },
+    {
+      "date": "2026-05-27",
+      "amount": 531.29
+    },
+    {
+      "date": "2026-05-28",
+      "amount": 995.85
+    },
+    {
+      "date": "2026-05-31",
+      "amount": 995.15
+    },
+    {
+      "date": "2026-06-02",
+      "amount": 995.5
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2026-02",
+      "label": "Feb 2026",
+      "kind": "actual",
+      "topups": 1,
+      "total": 495.15,
+      "momChange": null,
+      "dailyBurn": 17.68,
+      "cumulative": 495.15
+    },
+    {
+      "month": "2026-03",
+      "label": "Mar 2026",
+      "kind": "actual",
+      "topups": 6,
+      "total": 3475.76,
+      "momChange": 2980.61,
+      "dailyBurn": 112.12,
+      "cumulative": 3970.91
+    },
+    {
+      "month": "2026-04",
+      "label": "Apr 2026",
+      "kind": "actual",
+      "topups": 7,
+      "total": 6970.72,
+      "momChange": 3494.96,
+      "dailyBurn": 232.36,
+      "cumulative": 10941.63
+    },
+    {
+      "month": "2026-05",
+      "label": "May 2026",
+      "kind": "actual",
+      "topups": 14,
+      "total": 13219.26,
+      "momChange": 6248.54,
+      "dailyBurn": 426.43,
+      "cumulative": 24160.89
+    },
+    {
+      "month": "2026-06",
+      "label": "Jun 2026",
+      "kind": "actual-partial",
+      "topups": 1,
+      "total": 995.5,
+      "momChange": null,
+      "dailyBurn": 331.83,
+      "cumulative": 25156.39
+    },
+    {
+      "month": "2026-06",
+      "label": "Jun 2026",
+      "kind": "proj-full",
+      "topups": null,
+      "total": 19467.8,
+      "momChange": 6248.54,
+      "dailyBurn": 648.93,
+      "cumulative": 43628.69
+    },
+    {
+      "month": "2026-07",
+      "label": "Jul 2026",
+      "kind": "proj-full",
+      "topups": null,
+      "total": 25716.34,
+      "momChange": 6248.54,
+      "dailyBurn": 829.56,
+      "cumulative": 69345.03
+    },
+    {
+      "month": "2026-08",
+      "label": "Aug 2026",
+      "kind": "proj-half",
+      "topups": null,
+      "total": 28840.61,
+      "momChange": 3124.27,
+      "dailyBurn": 930.34,
+      "cumulative": 98185.64
+    },
+    {
+      "month": "2026-09",
+      "label": "Sep 2026",
+      "kind": "proj-half",
+      "topups": null,
+      "total": 31964.88,
+      "momChange": 3124.27,
+      "dailyBurn": 1065.5,
+      "cumulative": 130150.52
+    }
+  ],
+  "weekly": [
+    {
+      "week": "2026-W09",
+      "start": "2026-02-23",
+      "end": "2026-03-01",
+      "dates": [
+        "2026-02-25"
+      ],
+      "count": 1,
+      "total": 495.15
+    },
+    {
+      "week": "2026-W10",
+      "start": "2026-03-02",
+      "end": "2026-03-08",
+      "dates": [
+        "2026-03-03"
+      ],
+      "count": 1,
+      "total": 495.79
+    },
+    {
+      "week": "2026-W11",
+      "start": "2026-03-09",
+      "end": "2026-03-15",
+      "dates": [
+        "2026-03-09",
+        "2026-03-13"
+      ],
+      "count": 2,
+      "total": 991.57
+    },
+    {
+      "week": "2026-W12",
+      "start": "2026-03-16",
+      "end": "2026-03-22",
+      "dates": [
+        "2026-03-19"
+      ],
+      "count": 1,
+      "total": 496.61
+    },
+    {
+      "week": "2026-W13",
+      "start": "2026-03-23",
+      "end": "2026-03-29",
+      "dates": [
+        "2026-03-23",
+        "2026-03-25"
+      ],
+      "count": 2,
+      "total": 1491.79
+    },
+    {
+      "week": "2026-W14",
+      "start": "2026-03-30",
+      "end": "2026-04-05",
+      "dates": [
+        "2026-04-01"
+      ],
+      "count": 1,
+      "total": 995.23
+    },
+    {
+      "week": "2026-W15",
+      "start": "2026-04-06",
+      "end": "2026-04-12",
+      "dates": [
+        "2026-04-07"
+      ],
+      "count": 1,
+      "total": 995.37
+    },
+    {
+      "week": "2026-W16",
+      "start": "2026-04-13",
+      "end": "2026-04-19",
+      "dates": [
+        "2026-04-14",
+        "2026-04-17"
+      ],
+      "count": 2,
+      "total": 1994.23
+    },
+    {
+      "week": "2026-W17",
+      "start": "2026-04-20",
+      "end": "2026-04-26",
+      "dates": [
+        "2026-04-22",
+        "2026-04-24"
+      ],
+      "count": 2,
+      "total": 1990.59
+    },
+    {
+      "week": "2026-W18",
+      "start": "2026-04-27",
+      "end": "2026-05-03",
+      "dates": [
+        "2026-04-29",
+        "2026-05-02"
+      ],
+      "count": 2,
+      "total": 1990.61
+    },
+    {
+      "week": "2026-W19",
+      "start": "2026-05-04",
+      "end": "2026-05-10",
+      "dates": [
+        "2026-05-06",
+        "2026-05-08"
+      ],
+      "count": 2,
+      "total": 1991.05
+    },
+    {
+      "week": "2026-W20",
+      "start": "2026-05-11",
+      "end": "2026-05-17",
+      "dates": [
+        "2026-05-11",
+        "2026-05-13",
+        "2026-05-14"
+      ],
+      "count": 3,
+      "total": 2988.76
+    },
+    {
+      "week": "2026-W21",
+      "start": "2026-05-18",
+      "end": "2026-05-24",
+      "dates": [
+        "2026-05-18",
+        "2026-05-18",
+        "2026-05-20",
+        "2026-05-22"
+      ],
+      "count": 4,
+      "total": 3720.17
+    },
+    {
+      "week": "2026-W22",
+      "start": "2026-05-25",
+      "end": "2026-05-31",
+      "dates": [
+        "2026-05-26",
+        "2026-05-27",
+        "2026-05-28",
+        "2026-05-31"
+      ],
+      "count": 4,
+      "total": 3523.97
+    },
+    {
+      "week": "2026-W23",
+      "start": "2026-06-01",
+      "end": "2026-06-07",
+      "dates": [
+        "2026-06-02"
+      ],
+      "count": 1,
+      "total": 995.5
+    }
+  ],
+  "cadence": [
+    {
+      "date": "2026-02-25",
+      "daysSincePrev": null
+    },
+    {
+      "date": "2026-03-03",
+      "daysSincePrev": 6
+    },
+    {
+      "date": "2026-03-09",
+      "daysSincePrev": 6
+    },
+    {
+      "date": "2026-03-13",
+      "daysSincePrev": 4
+    },
+    {
+      "date": "2026-03-19",
+      "daysSincePrev": 6
+    },
+    {
+      "date": "2026-03-23",
+      "daysSincePrev": 4
+    },
+    {
+      "date": "2026-03-25",
+      "daysSincePrev": 2
+    },
+    {
+      "date": "2026-04-01",
+      "daysSincePrev": 7
+    },
+    {
+      "date": "2026-04-07",
+      "daysSincePrev": 6
+    },
+    {
+      "date": "2026-04-14",
+      "daysSincePrev": 7
+    },
+    {
+      "date": "2026-04-17",
+      "daysSincePrev": 3
+    },
+    {
+      "date": "2026-04-22",
+      "daysSincePrev": 5
+    },
+    {
+      "date": "2026-04-24",
+      "daysSincePrev": 2
+    },
+    {
+      "date": "2026-04-29",
+      "daysSincePrev": 5
+    },
+    {
+      "date": "2026-05-02",
+      "daysSincePrev": 3
+    },
+    {
+      "date": "2026-05-06",
+      "daysSincePrev": 4
+    },
+    {
+      "date": "2026-05-08",
+      "daysSincePrev": 2
+    },
+    {
+      "date": "2026-05-11",
+      "daysSincePrev": 3
+    },
+    {
+      "date": "2026-05-13",
+      "daysSincePrev": 2
+    },
+    {
+      "date": "2026-05-14",
+      "daysSincePrev": 1
+    },
+    {
+      "date": "2026-05-18",
+      "daysSincePrev": 4
+    },
+    {
+      "date": "2026-05-18",
+      "daysSincePrev": 0
+    },
+    {
+      "date": "2026-05-20",
+      "daysSincePrev": 2
+    },
+    {
+      "date": "2026-05-22",
+      "daysSincePrev": 2
+    },
+    {
+      "date": "2026-05-26",
+      "daysSincePrev": 4
+    },
+    {
+      "date": "2026-05-27",
+      "daysSincePrev": 1
+    },
+    {
+      "date": "2026-05-28",
+      "daysSincePrev": 1
+    },
+    {
+      "date": "2026-05-31",
+      "daysSincePrev": 3
+    },
+    {
+      "date": "2026-06-02",
+      "daysSincePrev": 2
+    }
+  ],
+  "metrics": {
+    "totalActual": 25156.39,
+    "totalTopups": 29,
+    "currentMonthProjected": 19467.8,
+    "currentDailyBurn": 331.83,
+    "lastProjectedMonth": "2026-09",
+    "lastProjectedMonthTotal": 31964.88,
+    "cumulativeProjected": 105989.63,
+    "annualizedRunRate": 121117.95,
+    "avgDaysBetweenTopupsLast4Weeks": 2.21
+  },
+  "methodology": {
+    "basisMonths": [
+      "2026-04",
+      "2026-05"
+    ],
+    "fullIncrement": 6248.54,
+    "halfIncrement": 3124.27,
+    "note": "Growth increment of $6,248.54 / month is the Apr 2026 → May 2026 change in actual spend. Months through Jul 2026 are projected at the full increment; months after that through Sep 2026 at half the increment ($3,124.27/month). Projections are recomputed fresh from actuals each week."
+  }
+}

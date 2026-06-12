@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import { sortReports, fmtDate, computeWow, computeAccuracy } from "../../lib/report";
+import Base from "../../layouts/Base.astro";
+import ReportView from "../../components/ReportView.astro";
+import config from "../../data/config.json";
+
+export async function getStaticPaths() {
+  const allEntries = await getCollection("reports");
+  const sorted = sortReports(allEntries);
+
+  return sorted.map((entry) => {
+    // History = all reports strictly older than this one
+    const history = sorted.filter((e) => e.data.date < entry.data.date);
+    const prevEntry = history[0] ?? null; // history is newest-first, so first = most recent prior
+
+    const prev = prevEntry?.data ?? null;
+    const wow = computeWow(entry.data, prev);
+    const accuracy = computeAccuracy(entry.data, history.map((e) => e.data));
+
+    return {
+      params: { date: entry.data.date },
+      props: {
+        report: entry.data,
+        wow,
+        accuracy,
+        allReports: sorted.map((e) => ({ date: e.data.date, title: e.data.title })),
+      },
+    };
+  });
+}
+
+const { report, wow, accuracy, allReports } = Astro.props;
+---
+
+<Base title={`Anthropic Token Spend — ${fmtDate(report.date)}`} reports={allReports}>
+  <ReportView
+    report={report}
+    wow={wow}
+    accuracy={accuracy}
+    budget={config.monthlyBudgetThreshold}
+  />
+</Base>

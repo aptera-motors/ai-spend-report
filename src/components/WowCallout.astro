@@ -1,0 +1,131 @@
+---
+import type { WowDelta } from "../lib/report";
+import { fmtUsd, fmtDate } from "../lib/report";
+
+interface Props {
+  wow: WowDelta | null;
+}
+const { wow } = Astro.props;
+---
+
+{
+  wow === null ? (
+    <div class="card p-4 text-[13px] text-[var(--color-ink-soft)]">
+      First report — baseline. Week-over-week comparisons will appear next week.
+    </div>
+  ) : (
+    <div
+      class="card p-5"
+      style="border-left: 3px solid var(--color-actual);"
+    >
+      <h3 class="text-[14px] font-medium text-[var(--color-ink)] mb-3">
+        Since last report ({fmtDate(wow.prevDate)})
+      </h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 text-[13px]">
+        <!-- New top-ups -->
+        <div>
+          <div class="text-[11px] text-[var(--color-muted)] mb-0.5">New top-ups</div>
+          <div class="font-medium text-[var(--color-ink)]">
+            {wow.newTopups} ({fmtUsd(wow.newSpend)})
+          </div>
+        </div>
+
+        <!-- Daily burn -->
+        <div>
+          <div class="text-[11px] text-[var(--color-muted)] mb-0.5">Daily burn</div>
+          <div class="font-medium text-[var(--color-ink)]">
+            {fmtUsd(wow.burnNow)}/day
+            <span
+              class="ml-1 text-[12px]"
+              style={
+                wow.burnChange > 0
+                  ? "color: #d4574e;"
+                  : wow.burnChange < 0
+                    ? "color: var(--color-proj-half-deep);"
+                    : "color: var(--color-muted);"
+              }
+            >
+              ({wow.burnChange > 0 ? "+" : ""}{fmtUsd(wow.burnChange)})
+            </span>
+          </div>
+          <div class="text-[11px] text-[var(--color-faint)]">
+            was {fmtUsd(wow.burnPrev)}/day
+          </div>
+        </div>
+
+        <!-- Current month projection (only when same month) -->
+        {wow.currentMonthProjPrev !== null ? (
+          <div>
+            <div class="text-[11px] text-[var(--color-muted)] mb-0.5">
+              Current month projection
+            </div>
+            <div class="font-medium text-[var(--color-ink)]">
+              {fmtUsd(wow.currentMonthProjNow)}
+              <span
+                class="ml-1 text-[12px]"
+                style={
+                  wow.currentMonthProjNow > wow.currentMonthProjPrev
+                    ? "color: #d4574e;"
+                    : wow.currentMonthProjNow < wow.currentMonthProjPrev
+                      ? "color: var(--color-proj-half-deep);"
+                      : "color: var(--color-muted);"
+                }
+              >
+                ({wow.currentMonthProjNow - wow.currentMonthProjPrev > 0 ? "+" : ""}
+                {fmtUsd(wow.currentMonthProjNow - wow.currentMonthProjPrev)})
+              </span>
+            </div>
+            <div class="text-[11px] text-[var(--color-faint)]">
+              was {fmtUsd(wow.currentMonthProjPrev)}
+            </div>
+          </div>
+        ) : (
+          <div>
+            <div class="text-[11px] text-[var(--color-muted)] mb-0.5">
+              Current month projection
+            </div>
+            <div class="font-medium text-[var(--color-ink)]">
+              {fmtUsd(wow.currentMonthProjNow)}
+            </div>
+            <div class="text-[11px] text-[var(--color-faint)]">new month</div>
+          </div>
+        )}
+
+        <!-- Avg days between top-ups -->
+        <div>
+          <div class="text-[11px] text-[var(--color-muted)] mb-0.5">
+            Avg gap between top-ups
+          </div>
+          {wow.avgGapNow !== null ? (
+            <div class="font-medium text-[var(--color-ink)]">
+              {wow.avgGapNow.toFixed(1)}d
+              {wow.avgGapPrev !== null && (
+                <span
+                  class="ml-1 text-[12px]"
+                  style={
+                    // falling gap = accelerating spend = bad (red)
+                    wow.avgGapNow < wow.avgGapPrev
+                      ? "color: #d4574e;"
+                      : wow.avgGapNow > wow.avgGapPrev
+                        ? "color: var(--color-proj-half-deep);"
+                        : "color: var(--color-muted);"
+                  }
+                >
+                  ({wow.avgGapNow - wow.avgGapPrev > 0 ? "+" : ""}
+                  {(wow.avgGapNow - wow.avgGapPrev).toFixed(1)}d)
+                </span>
+              )}
+            </div>
+          ) : (
+            <div class="text-[var(--color-muted)]">—</div>
+          )}
+          {wow.avgGapPrev !== null && (
+            <div class="text-[11px] text-[var(--color-faint)]">
+              was {wow.avgGapPrev.toFixed(1)}d (↓ = faster)
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}

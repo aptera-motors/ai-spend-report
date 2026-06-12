@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import { sortReports, fmtDate, computeWow, computeAccuracy } from "../lib/report";
+import Base from "../layouts/Base.astro";
+import ReportView from "../components/ReportView.astro";
+import config from "../data/config.json";
+
+const allEntries = await getCollection("reports");
+const sorted = sortReports(allEntries);
+
+const latest = sorted[0];
+const prevEntry = sorted[1] ?? null;
+
+const prev = prevEntry?.data ?? null;
+const wow = computeWow(latest.data, prev);
+const accuracy = computeAccuracy(latest.data, sorted.slice(1).map((e) => e.data));
+
+const reportList = sorted.map((e) => ({ date: e.data.date, title: e.data.title }));
+---
+
+<Base title={`Anthropic Token Spend — ${fmtDate(latest.data.date)}`} reports={reportList}>
+  <ReportView
+    report={latest.data}
+    wow={wow}
+    accuracy={accuracy}
+    budget={config.monthlyBudgetThreshold}
+  />
+</Base>

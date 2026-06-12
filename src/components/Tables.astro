@@ -1,0 +1,155 @@
+---
+import type { Report } from "../lib/report";
+import { fmtUsd, fmtDate } from "../lib/report";
+
+interface Props {
+  report: Report;
+}
+const { report } = Astro.props;
+
+// Helper: short month+day label from ISO date
+function fmtMonthDay(iso: string): string {
+  return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+// Group monthly rows for divider insertion
+type DividerKind = "actual" | "proj-full" | "proj-half";
+const DIVIDER_LABELS: Record<DividerKind, string> = {
+  actual: "Actuals",
+  "proj-full": "Projected — full growth",
+  "proj-half": "Projected — half growth",
+};
+
+// Build a flat list of items: either a divider or a data row
+interface Divider { type: "divider"; label: string }
+interface DataRow { type: "row"; row: Report["monthly"][number] }
+type TableItem = Divider | DataRow;
+
+const tableItems: TableItem[] = [];
+let lastGroup: string | null = null;
+for (const row of report.monthly) {
+  // actual-partial groups with "actual"
+  const groupKey: DividerKind = row.kind === "actual-partial" ? "actual" : (row.kind as DividerKind);
+  if (groupKey !== lastGroup) {
+    tableItems.push({ type: "divider", label: DIVIDER_LABELS[groupKey] });
+    lastGroup = groupKey;
+  }
+  tableItems.push({ type: "row", row });
+}
+---
+
+<!-- Monthly breakdown -->
+<section>
+  <h2 class="text-[15px] font-semibold text-[var(--color-ink)] mb-3">Monthly breakdown</h2>
+  <div class="card overflow-x-auto">
+    <table class="w-full text-[13px] border-collapse">
+      <thead>
+        <tr class="text-[12px] font-medium text-[var(--color-ink-soft)] bg-[#f8f7f4]">
+          <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Month</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Top-ups</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Token spend</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">MoM change</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Daily burn</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Cumulative</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tableItems.map((item) => {
+          if (item.type === "divider") {
+            return (
+              <tr class="bg-[#f8f7f4]">
+                <td
+                  colspan={6}
+                  class="px-4 py-1.5 text-[11px] font-medium uppercase tracking-wide text-[var(--color-muted)]"
+                >
+                  {item.label}
+                </td>
+              </tr>
+            );
+          }
+          const row = item.row;
+          const isPartial = row.kind === "actual-partial";
+          const isProj = row.kind.startsWith("proj");
+          return (
+            <tr class="border-b border-[var(--color-line-soft)] hover:bg-[#faf9f6]">
+              <td class="px-4 py-2.5" style={isPartial ? "color: var(--color-actual-deep);" : ""}>
+                {row.label}
+                {isPartial && (
+                  <span
+                    class="ml-1.5 text-[10px] font-medium px-1.5 py-0.5 rounded"
+                    style="background: #e8f2fc; color: var(--color-actual-deep);"
+                  >
+                    partial
+                  </span>
+                )}
+              </td>
+              <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">
+                {row.topups !== null ? row.topups : "—"}
+              </td>
+              <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">
+                {fmtUsd(row.total, 0)}
+              </td>
+              <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">
+                {row.momChange !== null
+                  ? isProj
+                    ? `+${fmtUsd(row.momChange, 0)} (assumed)`
+                    : `+${fmtUsd(row.momChange, 0)}`
+                  : "—"}
+              </td>
+              <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">
+                {fmtUsd(row.dailyBurn, 0)}/day
+              </td>
+              <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">
+                {fmtUsd(row.cumulative, 0)}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Weekly breakdown -->
+<section>
+  <h2 class="text-[15px] font-semibold text-[var(--color-ink)] mb-3 mt-8">Weekly breakdown</h2>
+  <div class="card overflow-x-auto">
+    <table class="w-full text-[13px] border-collapse">
+      <thead>
+        <tr class="text-[12px] font-medium text-[var(--color-ink-soft)] bg-[#f8f7f4]">
+          <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Week</th>
+          <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Date range</th>
+          <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Top-up dates</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Count</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {report.weekly.map((w) => (
+          <tr class="border-b border-[var(--color-line-soft)] hover:bg-[#faf9f6]">
+            <td class="px-4 py-2.5 text-[var(--color-ink-soft)]">{w.week}</td>
+            <td class="px-4 py-2.5 text-[var(--color-ink)]">
+              {fmtMonthDay(w.start)} – {fmtMonthDay(w.end)}
+            </td>
+            <td class="px-4 py-2.5 text-[var(--color-ink)]">
+              {w.dates.length === 0
+                ? "—"
+                : w.dates.map((d) => fmtMonthDay(d)).join(", ")}
+            </td>
+            <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">{w.count}</td>
+            <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">{fmtUsd(w.total, 0)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="px-4 py-2.5 text-[13px] text-[var(--color-ink-soft)]">
+      {report.metrics.avgDaysBetweenTopupsLast4Weeks !== null
+        ? `Average days between top-ups over the last 4 weeks: ${report.metrics.avgDaysBetweenTopupsLast4Weeks.toFixed(2)} days`
+        : "Average days between top-ups over the last 4 weeks: not enough data"}
+    </p>
+  </div>
+</section>

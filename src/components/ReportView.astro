@@ -1,0 +1,70 @@
+---
+import type { Report, WowDelta, AccuracyRow } from "../lib/report";
+import { fmtDate, fmtUsd } from "../lib/report";
+import MetricCards from "./MetricCards.astro";
+import WowCallout from "./WowCallout.astro";
+import Charts from "./Charts.astro";
+import AccuracyTracker from "./AccuracyTracker.astro";
+import Tables from "./Tables.astro";
+
+interface Props {
+  report: Report;
+  wow: WowDelta | null;
+  accuracy: AccuracyRow[];
+  budget: number | null;
+}
+const { report, wow, accuracy, budget } = Astro.props;
+
+// Last monthly label (for sub-line)
+const lastMonthLabel = report.monthly[report.monthly.length - 1]?.label ?? "";
+
+// Find the last actual/partial row for dataEnd display
+const lastActual = [...report.monthly].reverse().find((m) => m.kind.startsWith("actual"));
+---
+
+<div class="space-y-10">
+  <!-- Report header -->
+  <div>
+    <h1 class="text-[22px] font-semibold text-[var(--color-ink)] flex items-center gap-2">
+      Anthropic Token Usage Report
+      <span
+        class="text-[12px] font-medium px-2 py-0.5 rounded"
+        style="background: #e8f2fc; color: var(--color-actual-deep);"
+      >
+        Enterprise Plan
+      </span>
+    </h1>
+    <p class="text-[13px] text-[var(--color-ink-soft)] mt-1">
+      Token top-up spend &middot; {fmtDate(report.dataStart)} &ndash; {fmtDate(report.dataEnd)} (actuals) + projections through {lastMonthLabel} &middot; Generated {fmtDate(report.date)}
+    </p>
+  </div>
+
+  <!-- Metric cards -->
+  <MetricCards report={report} />
+
+  <!-- Week-over-week callout -->
+  <WowCallout wow={wow} />
+
+  <!-- Methodology box -->
+  <div class="card p-5" style="border-left: 3px solid var(--color-actual);">
+    <p class="text-[13px] text-[var(--color-ink)]">
+      <strong>Projection methodology:</strong> {report.methodology.note}
+    </p>
+  </div>
+
+  <!-- Charts -->
+  <Charts report={report} budget={budget} />
+
+  <!-- Accuracy tracker -->
+  <AccuracyTracker accuracy={accuracy} />
+
+  <!-- Tables -->
+  <Tables report={report} />
+
+  <!-- Footer note -->
+  <div class="pt-4 border-t border-[var(--color-line)] text-[11px] text-[var(--color-faint)]">
+    Data source: Ramp card transactions (Anthropic top-ups $400–$1,200 band; seat additions, API
+    overages, and the Feb 20 enterprise contract charge excluded). Generated automatically every
+    Wednesday.
+  </div>
+</div>

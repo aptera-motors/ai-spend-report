@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import { sortReports, fmtDate, fmtUsd } from "../../lib/report";
+import Base from "../../layouts/Base.astro";
+
+const allEntries = await getCollection("reports");
+const sorted = sortReports(allEntries);
+const reportList = sorted.map((e) => ({ date: e.data.date, title: e.data.title }));
+
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase.slice(0, -1) : rawBase;
+---
+
+<Base title="Report archive — Anthropic Token Spend" reports={reportList}>
+  <div class="space-y-6">
+    <h1 class="text-[22px] font-semibold text-[var(--color-ink)]">Report archive</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {sorted.map((entry) => (
+        <a
+          href={`${base}/reports/${entry.data.date}/`}
+          class="card p-4 block no-underline hover:border-[var(--color-actual)] transition-colors"
+        >
+          <div class="text-[15px] font-medium text-[var(--color-ink)] mb-1">
+            {fmtDate(entry.data.date)}
+          </div>
+          <div class="text-[12px] text-[var(--color-muted)]">
+            Actual: {fmtUsd(entry.data.metrics.totalActual)}
+          </div>
+          <div class="text-[12px] text-[var(--color-muted)]">
+            Current month proj: {fmtUsd(entry.data.metrics.currentMonthProjected)}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

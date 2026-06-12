@@ -1,0 +1,212 @@
+---
+import type { Report } from "../lib/report";
+
+interface Props {
+  report: Report;
+  budget: number | null;
+}
+const { report, budget } = Astro.props;
+
+// Pre-shape everything the client script needs so it stays dumb.
+const monthlyBars = report.monthly.map((m) => ({
+  label: m.kind === "actual-partial" ? `${m.label.slice(0, 3)} (partial)` : m.kind.startsWith("proj") ? `${m.label.slice(0, 3)} (proj)` : m.label.slice(0, 3),
+  total: m.total,
+  kind: m.kind,
+}));
+const burnSeries = report.monthly.map((m) => ({ label: m.label.slice(0, 3) + (m.kind === "actual-partial" ? "*" : m.kind.startsWith("proj") ? "ᵖ" : ""), burn: m.dailyBurn, kind: m.kind }));
+const chartData = {
+  monthlyBars,
+  burnSeries,
+  weekly: report.weekly.map((w) => ({ label: w.start.slice(5).replace("-", "/"), total: w.total, count: w.count, range: `${w.start} – ${w.end}` })),
+  cadence: report.cadence.filter((c) => c.daysSincePrev !== null),
+  budget,
+};
+const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}`).join("; ");
+---
+
+<section class="space-y-5">
+  <div class="card p-5">
+    <h3 class="chart-title">Monthly token spend — actuals &amp; forecast</h3>
+    <p class="chart-sub">{report.monthly[0].label} through {report.monthly[report.monthly.length - 1].label}</p>
+    <div class="flex flex-wrap gap-5 mb-3 text-xs text-ink-soft">
+      <span><i class="legend-dot bg-actual"></i>Actual</span>
+      <span><i class="legend-dot bg-proj-full"></i>Projected — full growth</span>
+      <span><i class="legend-dot bg-proj-half"></i>Projected — half growth</span>
+      {budget !== null && <span><i class="legend-dot bg-budget"></i>Budget threshold</span>}
+    </div>
+    <div class="relative h-72">
+      <canvas id="chart-monthly" role="img" aria-label={`Bar chart of monthly Anthropic token spend. ${monthlyAria}`}></canvas>
+    </div>
+  </div>
+
+  <div class="grid gap-5 md:grid-cols-2">
+    <div class="card p-5">
+      <h3 class="chart-title">Weekly top-up spend</h3>
+      <p class="chart-sub">All actual weeks, {report.dataStart} – {report.dataEnd}</p>
+      <div class="relative h-52"><canvas id="chart-weekly"></canvas></div>
+    </div>
+    <div class="card p-5">
+      <h3 class="chart-title">Daily burn rate</h3>
+      <p class="chart-sub">$/day by month — dashed where projected</p>
+      <div class="relative h-52"><canvas id="chart-burn"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card p-5">
+    <h3 class="chart-title">Top-up cadence</h3>
+    <p class="chart-sub">Days between consecutive top-ups — falling gaps mean accelerating spend</p>
+    <div class="relative h-52"><canvas id="chart-cadence"></canvas></div>
+  </div>
+</section>
+
+<script type="application/json" id="chart-data" set:html={JSON.stringify(chartData)} />
+
+<script>
+  import {
+    Chart,
+    BarController,
+    BarElement,
+    LineController,
+    LineElement,
+    PointElement,
+    CategoryScale,
+    LinearScale,
+    TimeScale,
+    Tooltip,
+    Legend,
+    Filler,
+  } from "chart.js";
+
+  Chart.register(BarController, BarElement, LineController, LineElement, PointElement, CategoryScale, LinearScale, TimeScale, Tooltip, Legend, Filler);
+
+  const COLORS: Record<string, string> = {
+    actual: "#378add",
+    "actual-partial": "#378add",
+    "proj-full": "#9ac9f0",
+    "proj-half": "#97c459",
+  };
+  const INK = "#5f5e5a";
+  const GRID = "#e9e7df";
+  const usd = (v: number) => "$" + Math.round(v).toLocaleString("en-US");
+
+  const data = JSON.parse(document.getElementById("chart-data")!.textContent!) as {
+    monthlyBars: { label: string; total: number; kind: string }[];
+    burnSeries: { label: string; burn: number; kind: string }[];
+    weekly: { label: string; total: number; count: number; range: string }[];
+    cadence: { date: string; daysSincePrev: number }[];
+    budget: number | null;
+  };
+
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.color = INK;
+  Chart.defaults.animation = { duration: 800, easing: "easeOutQuart" };
+
+  const moneyScale = { grid: { color: GRID }, border: { display: false }, ticks: { callback: (v: any) => usd(Number(v)) } };
+  const catScale = { grid: { display: false }, border: { display: false } };
+
+  // ---- monthly ----
+  const monthlyDatasets: any[] = [
+    {
+      type: "bar",
+      data: data.monthlyBars.map((m) => m.total),
+      backgroundColor: data.monthlyBars.map((m) => COLORS[m.kind]),
+      borderRadius: 5,
+      maxBarThickness: 64,
+      borderSkipped: false,
+    },
+  ];
+  if (data.budget !== null) {
+    monthlyDatasets.push({
+      type: "line",
+      data: data.monthlyBars.map(() => data.budget),
+      borderColor: "#d4574e",
+      borderWidth: 1.5,
+      borderDash: [6, 4],
+      pointRadius: 0,
+      label: "Budget threshold",
+    });
+  }
+  new Chart(document.getElementById("chart-monthly") as HTMLCanvasElement, {
+    data: { labels: data.monthlyBars.map((m) => m.label), datasets: monthlyDatasets },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (c: any) => (c.dataset.label === "Budget threshold" ? `Budget ${usd(c.parsed.y)}` : usd(c.parsed.y)) } },
+      },
+      scales: { x: catScale, y: { ...moneyScale, beginAtZero: true } },
+    },
+  });
+
+  // ---- weekly ----
+  new Chart(document.getElementById("chart-weekly") as HTMLCanvasElement, {
+    type: "bar",
+    data: {
+      labels: data.weekly.map((w) => w.label),
+      datasets: [{ data: data.weekly.map((w) => w.total), backgroundColor: "#378add", borderRadius: 4, maxBarThickness: 28, borderSkipped: false }],
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items: any[]) => data.weekly[items[0].dataIndex].range,
+            label: (c: any) => `${usd(c.parsed.y)} · ${data.weekly[c.dataIndex].count} top-up${data.weekly[c.dataIndex].count === 1 ? "" : "s"}`,
+          },
+        },
+      },
+      scales: { x: { ...catScale, ticks: { maxRotation: 60, autoSkip: true } }, y: { ...moneyScale, beginAtZero: true } },
+    },
+  });
+
+  // ---- daily burn: solid actuals, dashed projections (shared joint point) ----
+  const lastActualIdx = data.burnSeries.reduce((acc, m, i) => (m.kind.startsWith("actual") ? i : acc), 0);
+  const actualBurn = data.burnSeries.map((m, i) => (i <= lastActualIdx ? m.burn : null));
+  const projBurn = data.burnSeries.map((m, i) => (i >= lastActualIdx && (i === lastActualIdx || m.kind.startsWith("proj")) ? m.burn : null));
+  new Chart(document.getElementById("chart-burn") as HTMLCanvasElement, {
+    type: "line",
+    data: {
+      labels: data.burnSeries.map((m) => m.label),
+      datasets: [
+        { data: actualBurn, borderColor: "#378add", backgroundColor: "#378add", pointRadius: 3, tension: 0.3 },
+        { data: projBurn, borderColor: "#9ac9f0", backgroundColor: "#9ac9f0", borderDash: [6, 4], pointRadius: 3, pointStyle: "rectRot", tension: 0.3 },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c: any) => `${usd(c.parsed.y)}/day` } } },
+      scales: { x: catScale, y: { ...moneyScale, beginAtZero: true } },
+    },
+  });
+
+  // ---- cadence ----
+  new Chart(document.getElementById("chart-cadence") as HTMLCanvasElement, {
+    type: "line",
+    data: {
+      labels: data.cadence.map((c) => c.date.slice(5).replace("-", "/")),
+      datasets: [
+        {
+          data: data.cadence.map((c) => c.daysSincePrev),
+          borderColor: "#8a7fc9",
+          backgroundColor: "rgba(138,127,201,0.10)",
+          fill: true,
+          pointRadius: 2.5,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (c: any) => `${c.parsed.y} day${c.parsed.y === 1 ? "" : "s"} since previous top-up` } },
+      },
+      scales: {
+        x: { ...catScale, ticks: { maxRotation: 60, autoSkip: true } },
+        y: { grid: { color: GRID }, border: { display: false }, beginAtZero: true, ticks: { callback: (v: any) => `${v}d` } },
+      },
+    },
+  });
+</script>

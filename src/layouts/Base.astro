@@ -1,0 +1,80 @@
+---
+import "../styles/global.css";
+import { fmtDate } from "../lib/report";
+
+interface Props {
+  title: string;
+  reports: { date: string; title: string }[];
+}
+const { title, reports } = Astro.props;
+
+// Build a safe base URL helper: strip trailing slash, avoid double slashes
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase.slice(0, -1) : rawBase;
+function url(path: string): string {
+  const p = path.startsWith("/") ? path : "/" + path;
+  return base + p;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="max-w-[1000px] mx-auto px-4 py-6">
+      <header class="flex items-center justify-between mb-8 pb-4 border-b border-[var(--color-line)]">
+        <a
+          href={url("/")}
+          class="text-[15px] font-semibold text-[var(--color-ink)] no-underline hover:text-[var(--color-actual)]"
+        >
+          Anthropic Token Spend &mdash; Aptera
+        </a>
+        <div class="flex items-center gap-4 text-[13px]">
+          <a
+            href={url("/reports/")}
+            class="text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] no-underline"
+          >
+            Archive
+          </a>
+          {
+            reports.length > 1 && (
+              <select
+                id="report-picker"
+                class="text-[13px] border border-[var(--color-line)] rounded px-2 py-1 bg-white text-[var(--color-ink-soft)] cursor-pointer"
+              >
+                <option value="">Previous reports</option>
+                {reports.map((r) => (
+                  <option value={`${base}/reports/${r.date}/`}>
+                    {fmtDate(r.date)}
+                  </option>
+                ))}
+              </select>
+            )
+          }
+        </div>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="mt-12 pt-4 border-t border-[var(--color-line)] text-[11px] text-[var(--color-faint)]">
+        <slot name="footer" />
+      </footer>
+    </div>
+
+    <script is:inline>
+      const picker = document.getElementById("report-picker");
+      if (picker) {
+        picker.addEventListener("change", function () {
+          if (this.value) window.location.href = this.value;
+        });
+      }
+    </script>
+  </body>
+</html>

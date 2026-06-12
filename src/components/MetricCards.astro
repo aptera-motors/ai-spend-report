@@ -1,0 +1,75 @@
+---
+import type { Report } from "../lib/report";
+import { fmtUsd, fmtDate } from "../lib/report";
+
+interface Props {
+  report: Report;
+}
+const { report } = Astro.props;
+const { metrics } = report;
+
+// Find the last projected month label for the "lastProjectedMonthTotal" card
+const lastProjRow = [...report.monthly].reverse().find((m) => m.kind.startsWith("proj"));
+const lastProjLabel = lastProjRow?.label ?? metrics.lastProjectedMonth;
+---
+
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+  <!-- (a) Total token spend (actual) -->
+  <div class="card p-4">
+    <div class="text-[12px] text-[var(--color-muted)] leading-tight mb-1">
+      Total token spend (actual)
+    </div>
+    <div class="text-[22px] font-medium text-[var(--color-ink)] leading-tight">
+      {fmtUsd(metrics.totalActual)}
+    </div>
+    <div class="text-[11px] text-[var(--color-faint)] mt-1">
+      {fmtDate(report.dataStart)} – {fmtDate(report.dataEnd)}
+    </div>
+  </div>
+
+  <!-- (b) Current month projected -->
+  <div class="card p-4">
+    <div class="text-[12px] text-[var(--color-muted)] leading-tight mb-1">
+      Current month projected
+    </div>
+    <div class="text-[22px] font-medium text-[var(--color-ink)] leading-tight">
+      {fmtUsd(metrics.currentMonthProjected)}
+    </div>
+    <div class="text-[11px] text-[var(--color-faint)] mt-1">
+      {fmtUsd(metrics.currentDailyBurn)}/day actual burn
+    </div>
+  </div>
+
+  <!-- (c) Projected last month label -->
+  <div class="card p-4">
+    <div class="text-[12px] text-[var(--color-muted)] leading-tight mb-1">
+      Projected {lastProjLabel}
+    </div>
+    <div class="text-[22px] font-medium text-[var(--color-ink)] leading-tight">
+      {fmtUsd(metrics.lastProjectedMonthTotal)}
+    </div>
+    <div class="text-[11px] text-[var(--color-faint)] mt-1">half-growth pace</div>
+  </div>
+
+  <!-- (d) Cumulative projected -->
+  <div class="card p-4">
+    <div class="text-[12px] text-[var(--color-muted)] leading-tight mb-1">
+      Cumulative projected
+    </div>
+    <div class="text-[22px] font-medium text-[var(--color-ink)] leading-tight">
+      {fmtUsd(metrics.cumulativeProjected)}
+    </div>
+    <div class="text-[11px] text-[var(--color-faint)] mt-1">all projected months</div>
+  </div>
+
+  <!-- (e) Annualized run-rate -->
+  <div class="card p-4">
+    <div class="text-[12px] text-[var(--color-muted)] leading-tight mb-1">
+      Annualized run-rate
+    </div>
+    <div class="text-[22px] font-medium text-[var(--color-ink)] leading-tight">
+      {fmtUsd(metrics.annualizedRunRate)}
+    </div>
+    <div class="text-[11px] text-[var(--color-faint)] mt-1">current burn × 365</div>
+  </div>
+</div>

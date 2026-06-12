@@ -1,0 +1,74 @@
+---
+import type { AccuracyRow } from "../lib/report";
+import { fmtUsd, fmtDate } from "../lib/report";
+
+interface Props {
+  accuracy: AccuracyRow[];
+}
+const { accuracy } = Astro.props;
+
+function errorColor(pct: number): string {
+  const abs = Math.abs(pct);
+  if (abs <= 10) return "color: #27500a;"; // green
+  if (abs <= 25) return "color: #b8860b;"; // amber
+  return "color: #d4574e;"; // red
+}
+---
+
+<section>
+  <h2 class="text-[15px] font-semibold text-[var(--color-ink)] mb-3">
+    Projection accuracy
+  </h2>
+
+  {
+    accuracy.length === 0 ? (
+      <div class="card p-4 text-[13px] text-[var(--color-ink-soft)]">
+        No previously-projected months have completed yet — accuracy tracking starts once a
+        projected month closes out.
+      </div>
+    ) : (
+      <div class="card overflow-x-auto">
+        <table class="w-full text-[13px] border-collapse">
+          <thead>
+            <tr class="text-[12px] font-medium text-[var(--color-ink-soft)] bg-[#f8f7f4]">
+              <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">
+                Month
+              </th>
+              <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">
+                Projected
+              </th>
+              <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">
+                Actual
+              </th>
+              <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">
+                Error %
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {accuracy.map((row) => (
+              <tr class="border-b border-[var(--color-line-soft)] hover:bg-[#faf9f6]">
+                <td class="px-4 py-2.5 text-[var(--color-ink)]">{row.label}</td>
+                <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">
+                  {fmtUsd(row.projected)}
+                  <div class="text-[11px] text-[var(--color-faint)]">
+                    in report of {fmtDate(row.projectedInReport)}
+                  </div>
+                </td>
+                <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">
+                  {fmtUsd(row.actual)}
+                </td>
+                <td class="px-4 py-2.5 text-right font-medium" style={errorColor(row.errorPct)}>
+                  {row.errorPct > 0 ? "+" : ""}{row.errorPct.toFixed(1)}%
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="px-4 py-2.5 text-[11px] text-[var(--color-faint)]">
+          Error = (projected − actual) / actual × 100. Green = within ±10%, amber = ±25%, red = beyond.
+        </p>
+      </div>
+    )
+  }
+</section>
