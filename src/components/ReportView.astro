@@ -2,6 +2,7 @@
 import type { Report, WowDelta, AccuracyRow } from "../lib/report";
 import { fmtDate, fmtUsd } from "../lib/report";
 import MetricCards from "./MetricCards.astro";
+import AnalysisSummary from "./AnalysisSummary.astro";
 import WowCallout from "./WowCallout.astro";
 import Charts from "./Charts.astro";
 import AccuracyTracker from "./AccuracyTracker.astro";
@@ -35,9 +36,12 @@ const lastActual = [...report.monthly].reverse().find((m) => m.kind.startsWith("
       </span>
     </h1>
     <p class="text-[13px] text-[var(--color-ink-soft)] mt-1">
-      Token top-up spend &middot; {fmtDate(report.dataStart)} &ndash; {fmtDate(report.dataEnd)} (actuals) + projections through {lastMonthLabel} &middot; Generated {fmtDate(report.date)}
+      {report.source === "analytics" ? "Metered token usage" : "Token top-up spend"} &middot; {fmtDate(report.dataStart)} &ndash; {fmtDate(report.dataEnd)} (actuals) + projections through {lastMonthLabel} &middot; Generated {fmtDate(report.date)}
     </p>
   </div>
+
+  <!-- Executive summary (copy-paste for Teams) -->
+  <AnalysisSummary report={report} />
 
   <!-- Metric cards -->
   <MetricCards report={report} />
@@ -63,8 +67,8 @@ const lastActual = [...report.monthly].reverse().find((m) => m.kind.startsWith("
 
   <!-- Footer note -->
   <div class="pt-4 border-t border-[var(--color-line)] text-[11px] text-[var(--color-faint)]">
-    Data source: Ramp card transactions (Anthropic top-ups $400–$1,200 band; seat additions, API
-    overages, and the Feb 20 enterprise contract charge excluded). Generated automatically every
-    Wednesday.
+    {report.source === "analytics"
+      ? "Data source: Anthropic Enterprise Analytics API (cost_report) — actual metered token consumption in USD, across all Claude surfaces (chat, Claude Code, etc.). Seat licenses and the enterprise contract are not included. Generated automatically every Wednesday."
+      : "Data source: Ramp card transactions (Anthropic top-ups $400–$1,200 band; seat additions, API overages, and the Feb 20 enterprise contract charge excluded). Generated automatically every Wednesday."}
   </div>
 </div>

@@ -6,6 +6,8 @@ interface Props {
   report: Report;
 }
 const { report } = Astro.props;
+const isAnalytics = report.source === "analytics";
+const countLabel = isAnalytics ? "Days" : "Top-ups";
 
 // Helper: short month+day label from ISO date
 function fmtMonthDay(iso: string): string {
@@ -17,9 +19,10 @@ function fmtMonthDay(iso: string): string {
 }
 
 // Group monthly rows for divider insertion
-type DividerKind = "actual" | "proj-full" | "proj-half";
+type DividerKind = "actual" | "proj" | "proj-full" | "proj-half";
 const DIVIDER_LABELS: Record<DividerKind, string> = {
   actual: "Actuals",
+  proj: "Projected — 45-day run rate",
   "proj-full": "Projected — full growth",
   "proj-half": "Projected — half growth",
 };
@@ -50,7 +53,7 @@ for (const row of report.monthly) {
       <thead>
         <tr class="text-[12px] font-medium text-[var(--color-ink-soft)] bg-[#f8f7f4]">
           <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Month</th>
-          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Top-ups</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">{countLabel}</th>
           <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Token spend</th>
           <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">MoM change</th>
           <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Daily burn</th>
@@ -123,8 +126,7 @@ for (const row of report.monthly) {
         <tr class="text-[12px] font-medium text-[var(--color-ink-soft)] bg-[#f8f7f4]">
           <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Week</th>
           <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Date range</th>
-          <th class="text-left px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Top-up dates</th>
-          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Count</th>
+          <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">{countLabel}</th>
           <th class="text-right px-4 py-2.5 font-medium border-b border-[var(--color-line)]">Total</th>
         </tr>
       </thead>
@@ -135,21 +137,18 @@ for (const row of report.monthly) {
             <td class="px-4 py-2.5 text-[var(--color-ink)]">
               {fmtMonthDay(w.start)} – {fmtMonthDay(w.end)}
             </td>
-            <td class="px-4 py-2.5 text-[var(--color-ink)]">
-              {w.dates.length === 0
-                ? "—"
-                : w.dates.map((d) => fmtMonthDay(d)).join(", ")}
-            </td>
             <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">{w.count}</td>
             <td class="px-4 py-2.5 text-right text-[var(--color-ink)]">{fmtUsd(w.total, 0)}</td>
           </tr>
         ))}
       </tbody>
     </table>
-    <p class="px-4 py-2.5 text-[13px] text-[var(--color-ink-soft)]">
-      {report.metrics.avgDaysBetweenTopupsLast4Weeks !== null
-        ? `Average days between top-ups over the last 4 weeks: ${report.metrics.avgDaysBetweenTopupsLast4Weeks.toFixed(2)} days`
-        : "Average days between top-ups over the last 4 weeks: not enough data"}
-    </p>
+    {!isAnalytics && (
+      <p class="px-4 py-2.5 text-[13px] text-[var(--color-ink-soft)]">
+        {report.metrics.avgDaysBetweenTopupsLast4Weeks !== null
+          ? `Average days between top-ups over the last 4 weeks: ${report.metrics.avgDaysBetweenTopupsLast4Weeks.toFixed(2)} days`
+          : "Average days between top-ups over the last 4 weeks: not enough data"}
+      </p>
+    )}
   </div>
 </section>

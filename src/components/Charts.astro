@@ -14,14 +14,21 @@ const monthlyBars = report.monthly.map((m) => ({
   kind: m.kind,
 }));
 const burnSeries = report.monthly.map((m) => ({ label: m.label.slice(0, 3) + (m.kind === "actual-partial" ? "*" : m.kind.startsWith("proj") ? "ᵖ" : ""), burn: m.dailyBurn, kind: m.kind }));
+// Legacy top-up reports carry a cadence series; analytics reports show a daily
+// spend trend instead (built from the daily actual rows).
+const hasCadence = Array.isArray(report.cadence) && report.cadence.length > 0;
 const chartData = {
   monthlyBars,
   burnSeries,
   weekly: report.weekly.map((w) => ({ label: w.start.slice(5).replace("-", "/"), total: w.total, count: w.count, range: `${w.start} – ${w.end}` })),
-  cadence: report.cadence.filter((c) => c.daysSincePrev !== null),
+  cadence: hasCadence ? report.cadence!.filter((c) => c.daysSincePrev !== null) : [],
+  daily: hasCadence ? [] : report.topups.map((t) => ({ date: t.date, amount: t.amount })),
   budget,
 };
 const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}`).join("; ");
+
+// Legend reflects the projection kinds actually present in this report.
+const kinds = new Set(report.monthly.map((m) => m.kind));
 ---
 
 <section class="space-y-5">
@@ -30,8 +37,9 @@ const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}
     <p class="chart-sub">{report.monthly[0].label} through {report.monthly[report.monthly.length - 1].label}</p>
     <div class="flex flex-wrap gap-5 mb-3 text-xs text-ink-soft">
       <span><i class="legend-dot bg-actual"></i>Actual</span>
-      <span><i class="legend-dot bg-proj-full"></i>Projected — full growth</span>
-      <span><i class="legend-dot bg-proj-half"></i>Projected — half growth</span>
+      {kinds.has("proj") && <span><i class="legend-dot bg-proj-full"></i>Projected — 45-day run rate</span>}
+      {kinds.has("proj-full") && <span><i class="legend-dot bg-proj-full"></i>Projected — full growth</span>}
+      {kinds.has("proj-half") && <span><i class="legend-dot bg-proj-half"></i>Projected — half growth</span>}
       {budget !== null && <span><i class="legend-dot bg-budget"></i>Budget threshold</span>}
     </div>
     <div class="relative h-72">
@@ -41,7 +49,7 @@ const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}
 
   <div class="grid gap-5 md:grid-cols-2">
     <div class="card p-5">
-      <h3 class="chart-title">Weekly top-up spend</h3>
+      <h3 class="chart-title">Weekly spend</h3>
       <p class="chart-sub">All actual weeks, {report.dataStart} – {report.dataEnd}</p>
       <div class="relative h-52"><canvas id="chart-weekly"></canvas></div>
     </div>
@@ -52,11 +60,19 @@ const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}
     </div>
   </div>
 
-  <div class="card p-5">
-    <h3 class="chart-title">Top-up cadence</h3>
-    <p class="chart-sub">Days between consecutive top-ups — falling gaps mean accelerating spend</p>
-    <div class="relative h-52"><canvas id="chart-cadence"></canvas></div>
-  </div>
+  {hasCadence ? (
+    <div class="card p-5">
+      <h3 class="chart-title">Top-up cadence</h3>
+      <p class="chart-sub">Days between consecutive top-ups — falling gaps mean accelerating spend</p>
+      <div class="relative h-52"><canvas id="chart-cadence"></canvas></div>
+    </div>
+  ) : (
+    <div class="card p-5">
+      <h3 class="chart-title">Daily spend</h3>
+      <p class="chart-sub">Actual metered token cost per day</p>
+      <div class="relative h-52"><canvas id="chart-daily"></canvas></div>
+    </div>
+  )}
 </section>
 
 <script type="application/json" id="chart-data" set:html={JSON.stringify(chartData)} />
@@ -82,6 +98,7 @@ const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}
   const COLORS: Record<string, string> = {
     actual: "#378add",
     "actual-partial": "#378add",
+    proj: "#9ac9f0",
     "proj-full": "#9ac9f0",
     "proj-half": "#97c459",
   };
@@ -94,6 +111,7 @@ const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}
     burnSeries: { label: string; burn: number; kind: string }[];
     weekly: { label: string; total: number; count: number; range: string }[];
     cadence: { date: string; daysSincePrev: number }[];
+    daily: { date: string; amount: number }[];
     budget: number | null;
   };
 
@@ -181,32 +199,72 @@ const monthlyAria = report.monthly.map((m) => `${m.label} ${m.kind}: $${m.total}
     },
   });
 
-  // ---- cadence ----
-  new Chart(document.getElementById("chart-cadence") as HTMLCanvasElement, {
-    type: "line",
-    data: {
-      labels: data.cadence.map((c) => c.date.slice(5).replace("-", "/")),
-      datasets: [
-        {
-          data: data.cadence.map((c) => c.daysSincePrev),
-          borderColor: "#8a7fc9",
-          backgroundColor: "rgba(138,127,201,0.10)",
-          fill: true,
-          pointRadius: 2.5,
-          tension: 0.3,
+  // ---- cadence (legacy top-up reports only) ----
+  const cadenceEl = document.getElementById("chart-cadence") as HTMLCanvasElement | null;
+  if (cadenceEl) {
+    new Chart(cadenceEl, {
+      type: "line",
+      data: {
+        labels: data.cadence.map((c) => c.date.slice(5).replace("-", "/")),
+        datasets: [
+          {
+            data: data.cadence.map((c) => c.daysSincePrev),
+            borderColor: "#8a7fc9",
+            backgroundColor: "rgba(138,127,201,0.10)",
+            fill: true,
+            pointRadius: 2.5,
+            tension: 0.3,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (c: any) => `${c.parsed.y} day${c.parsed.y === 1 ? "" : "s"} since previous top-up` } },
         },
-      ],
-    },
-    options: {
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: (c: any) => `${c.parsed.y} day${c.parsed.y === 1 ? "" : "s"} since previous top-up` } },
+        scales: {
+          x: { ...catScale, ticks: { maxRotation: 60, autoSkip: true } },
+          y: { grid: { color: GRID }, border: { display: false }, beginAtZero: true, ticks: { callback: (v: any) => `${v}d` } },
+        },
       },
-      scales: {
-        x: { ...catScale, ticks: { maxRotation: 60, autoSkip: true } },
-        y: { grid: { color: GRID }, border: { display: false }, beginAtZero: true, ticks: { callback: (v: any) => `${v}d` } },
+    });
+  }
+
+  // ---- daily spend (analytics reports) ----
+  const dailyEl = document.getElementById("chart-daily") as HTMLCanvasElement | null;
+  if (dailyEl) {
+    new Chart(dailyEl, {
+      type: "line",
+      data: {
+        labels: data.daily.map((p) => p.date.slice(5).replace("-", "/")),
+        datasets: [
+          {
+            data: data.daily.map((p) => p.amount),
+            borderColor: "#378add",
+            backgroundColor: "rgba(55,138,221,0.10)",
+            fill: true,
+            pointRadius: 0,
+            tension: 0.25,
+          },
+        ],
       },
-    },
-  });
+      options: {
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: (items: any[]) => data.daily[items[0].dataIndex].date,
+              label: (c: any) => `${usd(c.parsed.y)}/day`,
+            },
+          },
+        },
+        scales: {
+          x: { ...catScale, ticks: { maxRotation: 60, autoSkip: true, maxTicksLimit: 12 } },
+          y: { ...moneyScale, beginAtZero: true },
+        },
+      },
+    });
+  }
 </script>

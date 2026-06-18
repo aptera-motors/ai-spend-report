@@ -36,7 +36,9 @@ const lastProjLabel = lastProjRow?.label ?? metrics.lastProjectedMonth;
       {fmtUsd(metrics.currentMonthProjected)}
     </div>
     <div class="text-[11px] text-[var(--color-faint)] mt-1">
-      {fmtUsd(metrics.currentDailyBurn)}/day actual burn
+      {metrics.twoWeekDailyRate != null
+        ? `${fmtUsd(metrics.twoWeekDailyRate)}/day · trailing 2-wk rate`
+        : `${fmtUsd(metrics.currentDailyBurn)}/day actual burn`}
     </div>
   </div>
 
@@ -48,7 +50,9 @@ const lastProjLabel = lastProjRow?.label ?? metrics.lastProjectedMonth;
     <div class="text-[22px] font-medium text-[var(--color-ink)] leading-tight">
       {fmtUsd(metrics.lastProjectedMonthTotal)}
     </div>
-    <div class="text-[11px] text-[var(--color-faint)] mt-1">half-growth pace</div>
+    <div class="text-[11px] text-[var(--color-faint)] mt-1">
+      {report.methodology.growthWindowDailyRate != null ? "45-day run-rate pace" : "half-growth pace"}
+    </div>
   </div>
 
   <!-- (d) Cumulative projected -->

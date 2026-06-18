@@ -1,0 +1,57 @@
+---
+import type { Report } from "../lib/report";
+
+interface Props {
+  report: Report;
+}
+const { report } = Astro.props;
+const analysis = report.analysis ?? "";
+---
+
+{
+  analysis && (
+    <div class="card p-5" style="border-left: 3px solid var(--color-actual-deep);">
+      <div class="flex items-start justify-between gap-4 mb-2">
+        <h2 class="text-[14px] font-semibold text-[var(--color-ink)]">Executive summary</h2>
+        <button
+          id="copy-analysis"
+          type="button"
+          class="shrink-0 text-[12px] font-medium px-2.5 py-1 rounded border border-[var(--color-line)] text-[var(--color-ink-soft)] hover:bg-[#f8f7f4] transition-colors"
+          data-analysis={analysis}
+        >
+          Copy for Teams
+        </button>
+      </div>
+      <p id="analysis-text" class="text-[14px] leading-relaxed text-[var(--color-ink)]">
+        {analysis}
+      </p>
+    </div>
+  )
+}
+
+<script>
+  const btn = document.getElementById("copy-analysis") as HTMLButtonElement | null;
+  if (btn) {
+    btn.addEventListener("click", async () => {
+      const text = btn.dataset.analysis ?? "";
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = "Copied ✓";
+        setTimeout(() => {
+          btn.textContent = original;
+        }, 1800);
+      } catch {
+        // Clipboard API unavailable (e.g. non-secure context) — select the text instead.
+        const p = document.getElementById("analysis-text");
+        if (p) {
+          const range = document.createRange();
+          range.selectNodeContents(p);
+          const sel = window.getSelection();
+          sel?.removeAllRanges();
+          sel?.addRange(range);
+        }
+      }
+    });
+  }
+</script>

@@ -1,17 +1,22 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-const monthKind = z.enum(["actual", "actual-partial", "proj-full", "proj-half"]);
+// "proj" is the current run-rate projection kind; "proj-full"/"proj-half" are
+// retained for backward compatibility with archived reports built under the
+// older growth-increment methodology.
+const monthKind = z.enum(["actual", "actual-partial", "proj", "proj-full", "proj-half"]);
 
 const reports = defineCollection({
   // One JSON file per weekly run: src/data/reports/YYYY-MM-DD.json
   loader: glob({ pattern: "*.json", base: "./src/data/reports" }),
   schema: z.object({
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    source: z.string().optional(), // "analytics" (Enterprise Analytics API) or legacy Ramp top-ups
     title: z.string(),
     generatedAt: z.string(),
     dataStart: z.string(),
     dataEnd: z.string(),
+    analysis: z.string().optional(),
     topups: z.array(
       z.object({
         date: z.string(),
@@ -40,12 +45,15 @@ const reports = defineCollection({
         total: z.number(),
       })
     ),
-    cadence: z.array(
-      z.object({
-        date: z.string(),
-        daysSincePrev: z.number().nullable(),
-      })
-    ),
+    // Only present on legacy top-up reports; analytics reports omit cadence.
+    cadence: z
+      .array(
+        z.object({
+          date: z.string(),
+          daysSincePrev: z.number().nullable(),
+        })
+      )
+      .optional(),
     metrics: z.object({
       totalActual: z.number(),
       totalTopups: z.number().int(),
@@ -56,11 +64,22 @@ const reports = defineCollection({
       cumulativeProjected: z.number(),
       annualizedRunRate: z.number(),
       avgDaysBetweenTopupsLast4Weeks: z.number().nullable(),
+      twoWeekDailyRate: z.number().nullable().optional(),
     }),
     methodology: z.object({
-      basisMonths: z.array(z.string()),
-      fullIncrement: z.number(),
-      halfIncrement: z.number(),
+      // current-month basis (trailing two-week run rate)
+      currentMonthMethod: z.string().optional(),
+      rollingWindowDays: z.number().optional(),
+      twoWeekDailyRate: z.number().nullable().optional(),
+      currentMonthActualToDate: z.number().optional(),
+      // future-month basis (trailing 45-day run rate)
+      futureMonthMethod: z.string().optional(),
+      growthWindowDays: z.number().optional(),
+      growthWindowDailyRate: z.number().nullable().optional(),
+      // legacy growth-increment fields (archived reports)
+      basisMonths: z.array(z.string()).optional(),
+      fullIncrement: z.number().optional(),
+      halfIncrement: z.number().optional(),
       note: z.string(),
     }),
   }),

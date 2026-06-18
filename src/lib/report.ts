@@ -23,13 +23,18 @@ export interface WowDelta {
   burnChange: number;
   currentMonthProjNow: number;
   currentMonthProjPrev: number | null; // null when prev report's current month differs
-  avgGapNow: number | null;
-  avgGapPrev: number | null;
+  twoWeekRateNow: number | null;
+  twoWeekRatePrev: number | null;
 }
 
-/** Week-over-week comparison vs the previous report. Null on the first report. */
+/**
+ * Week-over-week comparison vs the previous report. Null on the first report, or
+ * when the data source changed (e.g. Ramp top-ups → Analytics API) since the two
+ * bases aren't directly comparable.
+ */
 export function computeWow(current: Report, prev: Report | null): WowDelta | null {
   if (!prev) return null;
+  if ((current.source ?? "ramp") !== (prev.source ?? "ramp")) return null;
   const prevDates = new Set(prev.topups.map((t) => `${t.date}|${t.amount}`));
   const fresh = current.topups.filter((t) => !prevDates.has(`${t.date}|${t.amount}`));
   const currentMonth = current.date.slice(0, 7);
@@ -43,8 +48,8 @@ export function computeWow(current: Report, prev: Report | null): WowDelta | nul
     burnChange: Math.round((current.metrics.currentDailyBurn - prev.metrics.currentDailyBurn) * 100) / 100,
     currentMonthProjNow: current.metrics.currentMonthProjected,
     currentMonthProjPrev: prevSameMonth ? prev.metrics.currentMonthProjected : null,
-    avgGapNow: current.metrics.avgDaysBetweenTopupsLast4Weeks,
-    avgGapPrev: prev.metrics.avgDaysBetweenTopupsLast4Weeks,
+    twoWeekRateNow: current.metrics.twoWeekDailyRate ?? null,
+    twoWeekRatePrev: prev.metrics.twoWeekDailyRate ?? null,
   };
 }
 

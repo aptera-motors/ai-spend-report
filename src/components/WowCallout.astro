@@ -11,7 +11,7 @@ const { wow } = Astro.props;
 {
   wow === null ? (
     <div class="card p-4 text-[13px] text-[var(--color-ink-soft)]">
-      First report — baseline. Week-over-week comparisons will appear next week.
+      Week-over-week comparison will appear in the next report on the same basis.
     </div>
   ) : (
     <div
@@ -22,12 +22,13 @@ const { wow } = Astro.props;
         Since last report ({fmtDate(wow.prevDate)})
       </h3>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 text-[13px]">
-        <!-- New top-ups -->
+        <!-- New spend since last report -->
         <div>
-          <div class="text-[11px] text-[var(--color-muted)] mb-0.5">New top-ups</div>
+          <div class="text-[11px] text-[var(--color-muted)] mb-0.5">New spend</div>
           <div class="font-medium text-[var(--color-ink)]">
-            {wow.newTopups} ({fmtUsd(wow.newSpend)})
+            {fmtUsd(wow.newSpend)}
           </div>
+          <div class="text-[11px] text-[var(--color-faint)]">over {wow.newTopups} day{wow.newTopups === 1 ? "" : "s"}</div>
         </div>
 
         <!-- Daily burn -->
@@ -91,37 +92,37 @@ const { wow } = Astro.props;
           </div>
         )}
 
-        <!-- Avg days between top-ups -->
+        <!-- Trailing 2-week run rate -->
         <div>
           <div class="text-[11px] text-[var(--color-muted)] mb-0.5">
-            Avg gap between top-ups
+            Trailing 2-wk rate
           </div>
-          {wow.avgGapNow !== null ? (
+          {wow.twoWeekRateNow !== null ? (
             <div class="font-medium text-[var(--color-ink)]">
-              {wow.avgGapNow.toFixed(1)}d
-              {wow.avgGapPrev !== null && (
+              {fmtUsd(wow.twoWeekRateNow)}/day
+              {wow.twoWeekRatePrev !== null && (
                 <span
                   class="ml-1 text-[12px]"
                   style={
-                    // falling gap = accelerating spend = bad (red)
-                    wow.avgGapNow < wow.avgGapPrev
+                    // rising run rate = accelerating spend (red)
+                    wow.twoWeekRateNow > wow.twoWeekRatePrev
                       ? "color: #d4574e;"
-                      : wow.avgGapNow > wow.avgGapPrev
+                      : wow.twoWeekRateNow < wow.twoWeekRatePrev
                         ? "color: var(--color-proj-half-deep);"
                         : "color: var(--color-muted);"
                   }
                 >
-                  ({wow.avgGapNow - wow.avgGapPrev > 0 ? "+" : ""}
-                  {(wow.avgGapNow - wow.avgGapPrev).toFixed(1)}d)
+                  ({wow.twoWeekRateNow - wow.twoWeekRatePrev > 0 ? "+" : ""}
+                  {fmtUsd(wow.twoWeekRateNow - wow.twoWeekRatePrev)})
                 </span>
               )}
             </div>
           ) : (
             <div class="text-[var(--color-muted)]">—</div>
           )}
-          {wow.avgGapPrev !== null && (
+          {wow.twoWeekRatePrev !== null && (
             <div class="text-[11px] text-[var(--color-faint)]">
-              was {wow.avgGapPrev.toFixed(1)}d (↓ = faster)
+              was {fmtUsd(wow.twoWeekRatePrev)}/day
             </div>
           )}
         </div>
