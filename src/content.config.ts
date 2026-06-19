@@ -62,6 +62,15 @@ const reports = defineCollection({
       .optional(),
     topUsersMonth: z.array(z.object({ name: z.string(), amount: z.number() })).optional(),
     topUsersAllTime: z.array(z.object({ name: z.string(), amount: z.number() })).optional(),
+    licenses: z
+      .object({
+        assignedSeats: z.number().nullable(),
+        activeLast30: z.number(),
+        unusedLast30: z.number().nullable(),
+        inactiveUsers: z.array(z.object({ name: z.string(), totalSpend: z.number() })),
+      })
+      .nullable()
+      .optional(),
     // Only present on legacy top-up reports; analytics reports omit cadence.
     cadence: z
       .array(

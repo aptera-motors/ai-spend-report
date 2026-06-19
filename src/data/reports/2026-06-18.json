@@ -2,7 +2,7 @@
   "date": "2026-06-18",
   "source": "analytics",
   "title": "Report for Jun 18, 2026",
-  "generatedAt": "2026-06-19T05:11:30.882Z",
+  "generatedAt": "2026-06-19T05:24:52.159Z",
   "dataStart": "2026-02-20",
   "dataEnd": "2026-06-17",
   "topups": [
@@ -3641,6 +3641,21 @@
       "amount": 855.17
     }
   ],
+  "licenses": {
+    "assignedSeats": 51,
+    "activeLast30": 46,
+    "unusedLast30": 5,
+    "inactiveUsers": [
+      {
+        "name": "Vaibhav K.",
+        "totalSpend": 249.09
+      },
+      {
+        "name": "Joseph H.",
+        "totalSpend": 143.7
+      }
+    ]
+  },
   "metrics": {
     "totalActual": 30990.09,
     "totalTopups": 118,

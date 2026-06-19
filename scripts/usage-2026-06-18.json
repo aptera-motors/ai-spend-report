@@ -3260,5 +3260,20 @@
       "name": "Cisco R.",
       "amount": 855.17
     }
-  ]
+  ],
+  "licenses": {
+    "assignedSeats": 51,
+    "activeLast30": 46,
+    "unusedLast30": 5,
+    "inactiveUsers": [
+      {
+        "name": "Vaibhav K.",
+        "totalSpend": 249.09
+      },
+      {
+        "name": "Joseph H.",
+        "totalSpend": 143.7
+      }
+    ]
+  }
 }

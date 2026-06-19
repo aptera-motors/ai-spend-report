@@ -183,6 +183,27 @@ const topUsersAllTime = [...allByUser.values()]
   .sort((a, b) => b.amount - a.amount)
   .slice(0, 10);
 
+// ---- unused licenses (no usage in the last 30 days) ------------------------
+// "Active" = any token consumption in the trailing 30 days (matches MAU). The
+// inactive list names ever-active users with zero recent tokens; truly
+// never-active seats are counted in unusedLast30 but can't be named (the API
+// exposes no name for a seat that has never generated usage).
+const win30 = new Date(d(ASOF));
+win30.setUTCDate(win30.getUTCDate() - 30);
+const last30Rows = await apiGetAll("user_usage_report", { starting_at: isoT(win30), ending_at: isoT(d(ASOF)), limit: 1000 }, "data");
+const active30Ids = new Set(last30Rows.map((r) => r.actor?.user_id).filter(Boolean));
+let assignedSeats = null;
+for (let i = activeUsers.length - 1; i >= 0; i--) {
+  if (activeUsers[i].seats != null) { assignedSeats = activeUsers[i].seats; break; }
+}
+const activeLast30 = active30Ids.size;
+const unusedLast30 = assignedSeats != null ? Math.max(0, assignedSeats - activeLast30) : null;
+const inactiveUsers = [...allByUser.values()]
+  .filter((v) => v.actor?.user_id && !active30Ids.has(v.actor.user_id))
+  .map((v) => ({ name: fmtName(v.actor), totalSpend: r2(v.cents / 100) }))
+  .sort((a, b) => b.totalSpend - a.totalSpend);
+const licenses = { assignedSeats, activeLast30, unusedLast30, inactiveUsers };
+
 // ---- assemble --------------------------------------------------------------
 const daily = [...perDayTotal.entries()]
   .filter(([, c]) => c > 0)
@@ -202,12 +223,13 @@ for (const date of [...perDayFamily.keys()].sort()) {
   }
 }
 
-const out = { daily, byModel, activeUsers, topUsersMonth, topUsersAllTime };
+const out = { daily, byModel, activeUsers, topUsersMonth, topUsersAllTime, licenses };
 const outPath = join(repoRoot, "scripts", `usage-${ASOF}.json`);
 writeFileSync(outPath, JSON.stringify(out, null, 2) + "\n");
 const total = r2(daily.reduce((a, t) => a + t.amount, 0));
 console.log(`Wrote ${outPath}`);
 console.log(
   `  days=${daily.length} total=$${total} range=${daily[0].date}..${daily[daily.length - 1].date} ` +
-    `byModelRows=${byModel.length} activeUserDays=${activeUsers.length} topMonth=${topUsersMonth.length} topAll=${topUsersAllTime.length}`
+    `byModelRows=${byModel.length} activeUserDays=${activeUsers.length} topMonth=${topUsersMonth.length} topAll=${topUsersAllTime.length} ` +
+    `seats=${assignedSeats} active30=${activeLast30} unused30=${unusedLast30} inactiveNamed=${inactiveUsers.length}`
 );

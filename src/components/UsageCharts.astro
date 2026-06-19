@@ -11,10 +11,15 @@ const activeUsers = report.activeUsers ?? [];
 const topMonth = report.topUsersMonth ?? [];
 const topAll = report.topUsersAllTime ?? [];
 
+const licenses = report.licenses ?? null;
+const hasLicenses = !!licenses && (licenses.unusedLast30 != null || (licenses.inactiveUsers?.length ?? 0) > 0);
+
 const hasModel = byModel.length > 0;
 const hasActive = activeUsers.length > 0;
 const hasTop = topMonth.length > 0 || topAll.length > 0;
-const hasAny = hasModel || hasActive || hasTop;
+const hasAny = hasModel || hasActive || hasTop || hasLicenses;
+
+const fmtUsd0 = (n: number) => "$" + Math.round(n).toLocaleString("en-US");
 
 const MODEL_COLORS: Record<string, string> = {
   Opus: "#8b5cf6",
@@ -100,6 +105,48 @@ const usageData = {
                 <canvas id="chart-top-all" />
               </div>
             </div>
+          )}
+        </div>
+      )}
+
+      {hasLicenses && (
+        <div class="card p-5">
+          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+            <h3 class="chart-title">Unused licenses (last 30 days)</h3>
+            {licenses.unusedLast30 != null && licenses.assignedSeats != null && (
+              <span class="text-[13px] text-[var(--color-ink-soft)]">
+                <strong class="text-[var(--color-ink)]">{licenses.unusedLast30}</strong> of {licenses.assignedSeats} seats unused
+                &middot; {licenses.activeLast30} active
+              </span>
+            )}
+          </div>
+          <p class="chart-sub">
+            Licensed users with no token usage in the last 30 days, by historical spend.
+            {licenses.unusedLast30 != null && licenses.inactiveUsers.length < licenses.unusedLast30 && (
+              <span> {licenses.unusedLast30 - licenses.inactiveUsers.length} additional seat(s) have never been used and can't be named.</span>
+            )}
+          </p>
+          {licenses.inactiveUsers.length > 0 ? (
+            <div class="overflow-x-auto mt-2">
+              <table class="w-full text-[13px] border-collapse">
+                <thead>
+                  <tr class="text-[12px] font-medium text-[var(--color-ink-soft)] bg-[#f8f7f4]">
+                    <th class="text-left px-4 py-2 font-medium border-b border-[var(--color-line)]">User</th>
+                    <th class="text-right px-4 py-2 font-medium border-b border-[var(--color-line)]">Historical spend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {licenses.inactiveUsers.map((u) => (
+                    <tr class="border-b border-[var(--color-line-soft)] hover:bg-[#faf9f6]">
+                      <td class="px-4 py-2 text-[var(--color-ink)]">{u.name}</td>
+                      <td class="px-4 py-2 text-right text-[var(--color-ink)]">{fmtUsd0(u.totalSpend)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p class="text-[13px] text-[var(--color-ink-soft)] mt-2">No previously-active users have gone inactive in the last 30 days.</p>
           )}
         </div>
       )}

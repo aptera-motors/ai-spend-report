@@ -206,6 +206,7 @@ const report = {
   activeUsers: extra.activeUsers ?? [],
   topUsersMonth: extra.topUsersMonth ?? [],
   topUsersAllTime: extra.topUsersAllTime ?? [],
+  licenses: extra.licenses ?? null,
   metrics: {
     totalActual,
     totalTopups: topups.length,
