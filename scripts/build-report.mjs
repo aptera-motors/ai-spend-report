@@ -35,8 +35,12 @@ if (!inputPath || !/^\d{4}-\d{2}-\d{2}$/.test(asOfArg ?? "")) {
   process.exit(1);
 }
 
+// Input is either a bare [{date,amount}] array (legacy) or an object with a
+// `daily` array plus extra sections (byModel, activeUsers, top spenders).
+const input = JSON.parse(readFileSync(inputPath, "utf8"));
+const extra = Array.isArray(input) ? {} : input;
 // `topups` = daily actual-spend rows (legacy field name; see header note).
-const topups = JSON.parse(readFileSync(inputPath, "utf8"))
+const topups = (Array.isArray(input) ? input : input.daily ?? [])
   .map((t) => ({ date: t.date, amount: Number(t.amount) }))
   .sort((a, b) => a.date.localeCompare(b.date));
 if (topups.length === 0) {
@@ -198,6 +202,10 @@ const report = {
   topups: topups.map((t) => ({ date: t.date, amount: r2(t.amount) })),
   monthly,
   weekly,
+  byModel: extra.byModel ?? [],
+  activeUsers: extra.activeUsers ?? [],
+  topUsersMonth: extra.topUsersMonth ?? [],
+  topUsersAllTime: extra.topUsersAllTime ?? [],
   metrics: {
     totalActual,
     totalTopups: topups.length,

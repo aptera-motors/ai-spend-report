@@ -5,6 +5,7 @@ import MetricCards from "./MetricCards.astro";
 import AnalysisSummary from "./AnalysisSummary.astro";
 import WowCallout from "./WowCallout.astro";
 import Charts from "./Charts.astro";
+import UsageCharts from "./UsageCharts.astro";
 import AccuracyTracker from "./AccuracyTracker.astro";
 import Tables from "./Tables.astro";
 
@@ -58,6 +59,9 @@ const lastActual = [...report.monthly].reverse().find((m) => m.kind.startsWith("
 
   <!-- Charts -->
   <Charts report={report} budget={budget} />
+
+  <!-- Usage charts: spend by model, active users, top spenders -->
+  <UsageCharts report={report} />
 
   <!-- Accuracy tracker -->
   <AccuracyTracker accuracy={accuracy} />

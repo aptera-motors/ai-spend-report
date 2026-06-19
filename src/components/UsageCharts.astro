@@ -1,0 +1,221 @@
+---
+import type { Report } from "../lib/report";
+
+interface Props {
+  report: Report;
+}
+const { report } = Astro.props;
+
+const byModel = report.byModel ?? [];
+const activeUsers = report.activeUsers ?? [];
+const topMonth = report.topUsersMonth ?? [];
+const topAll = report.topUsersAllTime ?? [];
+
+const hasModel = byModel.length > 0;
+const hasActive = activeUsers.length > 0;
+const hasTop = topMonth.length > 0 || topAll.length > 0;
+const hasAny = hasModel || hasActive || hasTop;
+
+const MODEL_COLORS: Record<string, string> = {
+  Opus: "#8b5cf6",
+  Sonnet: "#378add",
+  Haiku: "#d98a3d",
+  Fable: "#b5b03f",
+};
+const FAMILY_ORDER = ["Opus", "Sonnet", "Haiku", "Fable"];
+
+// Pivot the long byModel rows into one aligned series per family.
+const modelDates = [...new Set(byModel.map((r) => r.date))].sort();
+const familiesPresent = FAMILY_ORDER.filter((f) => byModel.some((r) => r.family === f));
+const modelMap = new Map<string, number>();
+for (const r of byModel) modelMap.set(`${r.date}|${r.family}`, r.amount);
+const modelSeries = familiesPresent.map((f) => ({
+  family: f,
+  color: MODEL_COLORS[f] ?? "#888",
+  data: modelDates.map((dt) => modelMap.get(`${dt}|${f}`) ?? 0),
+}));
+
+const usageData = {
+  modelLabels: modelDates.map((s) => s.slice(5).replace("-", "/")),
+  modelSeries,
+  active: {
+    labels: activeUsers.map((a) => a.date.slice(5).replace("-", "/")),
+    dau: activeUsers.map((a) => a.dau),
+  },
+  topMonth: { labels: topMonth.map((t) => t.name), data: topMonth.map((t) => t.amount) },
+  topAll: { labels: topAll.map((t) => t.name), data: topAll.map((t) => t.amount) },
+};
+---
+
+{
+  hasAny && (
+    <section class="space-y-5">
+      {(hasModel || hasActive) && (
+        <div class="grid gap-5 md:grid-cols-2">
+          {hasModel && (
+            <div class="card p-5">
+              <h3 class="chart-title">Spend by model</h3>
+              <p class="chart-sub">Actual daily USD by model family</p>
+              <div class="flex flex-wrap gap-4 mb-3 text-xs text-ink-soft">
+                {modelSeries.map((s) => (
+                  <span>
+                    <i class="legend-dot" style={`background:${s.color}`} />
+                    {s.family}
+                  </span>
+                ))}
+              </div>
+              <div class="relative h-60">
+                <canvas id="chart-model" />
+              </div>
+            </div>
+          )}
+          {hasActive && (
+            <div class="card p-5">
+              <h3 class="chart-title">Active users</h3>
+              <p class="chart-sub">Daily active users (data lags ~2 days)</p>
+              <div class="relative h-60">
+                <canvas id="chart-active" />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {hasTop && (
+        <div class="grid gap-5 md:grid-cols-2">
+          {topMonth.length > 0 && (
+            <div class="card p-5">
+              <h3 class="chart-title">Top spenders — this month</h3>
+              <p class="chart-sub">Top 10 by actual token spend, month to date</p>
+              <div class="relative h-72">
+                <canvas id="chart-top-month" />
+              </div>
+            </div>
+          )}
+          {topAll.length > 0 && (
+            <div class="card p-5">
+              <h3 class="chart-title">Top spenders — all time</h3>
+              <p class="chart-sub">Top 10 by actual token spend since launch</p>
+              <div class="relative h-72">
+                <canvas id="chart-top-all" />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </section>
+  )
+}
+
+<script type="application/json" id="usage-chart-data" set:html={JSON.stringify(usageData)} />
+
+<script>
+  import {
+    Chart,
+    BarController,
+    BarElement,
+    LineController,
+    LineElement,
+    PointElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Filler,
+  } from "chart.js";
+
+  Chart.register(BarController, BarElement, LineController, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Filler);
+
+  const dataEl = document.getElementById("usage-chart-data");
+  if (dataEl) {
+    const INK = "#5f5e5a";
+    const GRID = "#e9e7df";
+    const usd = (v: number) => "$" + Math.round(v).toLocaleString("en-US");
+    const data = JSON.parse(dataEl.textContent!) as {
+      modelLabels: string[];
+      modelSeries: { family: string; color: string; data: number[] }[];
+      active: { labels: string[]; dau: (number | null)[] };
+      topMonth: { labels: string[]; data: number[] };
+      topAll: { labels: string[]; data: number[] };
+    };
+
+    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    Chart.defaults.font.size = 11;
+    Chart.defaults.color = INK;
+
+    const moneyScale = { grid: { color: GRID }, border: { display: false }, ticks: { callback: (v: any) => usd(Number(v)) } };
+    const catScale = { grid: { display: false }, border: { display: false } };
+
+    // ---- spend by model (multi-line) ----
+    const modelEl = document.getElementById("chart-model") as HTMLCanvasElement | null;
+    if (modelEl && data.modelSeries.length) {
+      new Chart(modelEl, {
+        type: "line",
+        data: {
+          labels: data.modelLabels,
+          datasets: data.modelSeries.map((s) => ({
+            label: s.family,
+            data: s.data,
+            borderColor: s.color,
+            backgroundColor: s.color,
+            pointRadius: 0,
+            borderWidth: 2,
+            tension: 0.25,
+          })),
+        },
+        options: {
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: (c: any) => `${c.dataset.label}: ${usd(c.parsed.y)}/day` } },
+          },
+          scales: { x: { ...catScale, ticks: { maxRotation: 60, autoSkip: true, maxTicksLimit: 12 } }, y: { ...moneyScale, beginAtZero: true } },
+        },
+      });
+    }
+
+    // ---- active users (single line) ----
+    const activeEl = document.getElementById("chart-active") as HTMLCanvasElement | null;
+    if (activeEl && data.active.labels.length) {
+      new Chart(activeEl, {
+        type: "line",
+        data: {
+          labels: data.active.labels,
+          datasets: [
+            {
+              data: data.active.dau,
+              borderColor: "#7c5cff",
+              backgroundColor: "rgba(124,92,255,0.10)",
+              fill: true,
+              pointRadius: 0,
+              borderWidth: 2,
+              tension: 0.25,
+            },
+          ],
+        },
+        options: {
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c: any) => `${c.parsed.y} active users` } } },
+          scales: { x: { ...catScale, ticks: { maxRotation: 60, autoSkip: true, maxTicksLimit: 12 } }, y: { grid: { color: GRID }, border: { display: false }, beginAtZero: true } },
+        },
+      });
+    }
+
+    // ---- top spenders (horizontal bars) ----
+    const hbar = (el: HTMLCanvasElement, labels: string[], values: number[]) =>
+      new Chart(el, {
+        type: "bar",
+        data: { labels, datasets: [{ data: values, backgroundColor: "#378add", borderRadius: 4, maxBarThickness: 22 }] },
+        options: {
+          indexAxis: "y",
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c: any) => usd(c.parsed.x) } } },
+          scales: { x: { ...moneyScale, beginAtZero: true }, y: { ...catScale } },
+        },
+      });
+
+    const tmEl = document.getElementById("chart-top-month") as HTMLCanvasElement | null;
+    if (tmEl && data.topMonth.labels.length) hbar(tmEl, data.topMonth.labels, data.topMonth.data);
+    const taEl = document.getElementById("chart-top-all") as HTMLCanvasElement | null;
+    if (taEl && data.topAll.labels.length) hbar(taEl, data.topAll.labels, data.topAll.data);
+  }
+</script>
