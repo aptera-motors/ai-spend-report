@@ -160,8 +160,14 @@ for (const [s, e] of engEnd > START ? windows(START, engEnd) : []) {
 activeUsers.sort((a, b) => a.date.localeCompare(b.date));
 
 // ---- top spenders: this month ----------------------------------------------
+// On the 1st of the month monthStart === ASOF, which the API rejects (the range
+// must be non-empty). There is no month-to-date consumption yet, so skip the
+// query and report an empty list.
 const monthStart = `${ASOF.slice(0, 7)}-01`;
-const monthRows = await apiGetAll("user_cost_report", { starting_at: isoT(d(monthStart)), ending_at: isoT(d(ASOF)), limit: 1000 }, "data");
+const monthRows =
+  monthStart < ASOF
+    ? await apiGetAll("user_cost_report", { starting_at: isoT(d(monthStart)), ending_at: isoT(d(ASOF)), limit: 1000 }, "data")
+    : [];
 const topUsersMonth = monthRows
   .map((r) => ({ name: fmtName(r.actor), amount: r2((Number(r.amount) || 0) / 100) }))
   .sort((a, b) => b.amount - a.amount)

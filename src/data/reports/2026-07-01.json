@@ -1,0 +1,4000 @@
+{
+  "date": "2026-07-01",
+  "source": "analytics",
+  "title": "Report for Jul 1, 2026",
+  "generatedAt": "2026-07-01T16:36:10.033Z",
+  "dataStart": "2026-02-20",
+  "dataEnd": "2026-06-30",
+  "topups": [
+    {
+      "date": "2026-02-20",
+      "amount": 4.21
+    },
+    {
+      "date": "2026-02-21",
+      "amount": 23.16
+    },
+    {
+      "date": "2026-02-22",
+      "amount": 27.78
+    },
+    {
+      "date": "2026-02-23",
+      "amount": 108.02
+    },
+    {
+      "date": "2026-02-24",
+      "amount": 168.62
+    },
+    {
+      "date": "2026-02-25",
+      "amount": 147.39
+    },
+    {
+      "date": "2026-02-26",
+      "amount": 138.29
+    },
+    {
+      "date": "2026-02-27",
+      "amount": 70.02
+    },
+    {
+      "date": "2026-02-28",
+      "amount": 31.15
+    },
+    {
+      "date": "2026-03-01",
+      "amount": 33.81
+    },
+    {
+      "date": "2026-03-02",
+      "amount": 86.03
+    },
+    {
+      "date": "2026-03-03",
+      "amount": 109.68
+    },
+    {
+      "date": "2026-03-04",
+      "amount": 86.72
+    },
+    {
+      "date": "2026-03-05",
+      "amount": 120.22
+    },
+    {
+      "date": "2026-03-06",
+      "amount": 128.58
+    },
+    {
+      "date": "2026-03-07",
+      "amount": 60.68
+    },
+    {
+      "date": "2026-03-08",
+      "amount": 42.88
+    },
+    {
+      "date": "2026-03-09",
+      "amount": 87.43
+    },
+    {
+      "date": "2026-03-10",
+      "amount": 143.36
+    },
+    {
+      "date": "2026-03-11",
+      "amount": 105.25
+    },
+    {
+      "date": "2026-03-12",
+      "amount": 118.01
+    },
+    {
+      "date": "2026-03-13",
+      "amount": 78.89
+    },
+    {
+      "date": "2026-03-14",
+      "amount": 51.92
+    },
+    {
+      "date": "2026-03-15",
+      "amount": 32.61
+    },
+    {
+      "date": "2026-03-16",
+      "amount": 114
+    },
+    {
+      "date": "2026-03-17",
+      "amount": 144.92
+    },
+    {
+      "date": "2026-03-18",
+      "amount": 116.45
+    },
+    {
+      "date": "2026-03-19",
+      "amount": 128.9
+    },
+    {
+      "date": "2026-03-20",
+      "amount": 235.3
+    },
+    {
+      "date": "2026-03-21",
+      "amount": 107.18
+    },
+    {
+      "date": "2026-03-22",
+      "amount": 43.54
+    },
+    {
+      "date": "2026-03-23",
+      "amount": 126.96
+    },
+    {
+      "date": "2026-03-24",
+      "amount": 289.71
+    },
+    {
+      "date": "2026-03-25",
+      "amount": 200.16
+    },
+    {
+      "date": "2026-03-26",
+      "amount": 261.79
+    },
+    {
+      "date": "2026-03-27",
+      "amount": 252.3
+    },
+    {
+      "date": "2026-03-28",
+      "amount": 66.08
+    },
+    {
+      "date": "2026-03-29",
+      "amount": 72.43
+    },
+    {
+      "date": "2026-03-30",
+      "amount": 112.01
+    },
+    {
+      "date": "2026-03-31",
+      "amount": 207.85
+    },
+    {
+      "date": "2026-04-01",
+      "amount": 214.65
+    },
+    {
+      "date": "2026-04-02",
+      "amount": 253.79
+    },
+    {
+      "date": "2026-04-03",
+      "amount": 189.63
+    },
+    {
+      "date": "2026-04-04",
+      "amount": 79.3
+    },
+    {
+      "date": "2026-04-05",
+      "amount": 99.9
+    },
+    {
+      "date": "2026-04-06",
+      "amount": 126.14
+    },
+    {
+      "date": "2026-04-07",
+      "amount": 163.69
+    },
+    {
+      "date": "2026-04-08",
+      "amount": 213.45
+    },
+    {
+      "date": "2026-04-09",
+      "amount": 233.18
+    },
+    {
+      "date": "2026-04-10",
+      "amount": 165.18
+    },
+    {
+      "date": "2026-04-11",
+      "amount": 53.46
+    },
+    {
+      "date": "2026-04-12",
+      "amount": 32.95
+    },
+    {
+      "date": "2026-04-13",
+      "amount": 161.28
+    },
+    {
+      "date": "2026-04-14",
+      "amount": 239.42
+    },
+    {
+      "date": "2026-04-15",
+      "amount": 288.79
+    },
+    {
+      "date": "2026-04-16",
+      "amount": 293.42
+    },
+    {
+      "date": "2026-04-17",
+      "amount": 360.99
+    },
+    {
+      "date": "2026-04-18",
+      "amount": 99.43
+    },
+    {
+      "date": "2026-04-19",
+      "amount": 43.8
+    },
+    {
+      "date": "2026-04-20",
+      "amount": 145.11
+    },
+    {
+      "date": "2026-04-21",
+      "amount": 443.26
+    },
+    {
+      "date": "2026-04-22",
+      "amount": 326.26
+    },
+    {
+      "date": "2026-04-23",
+      "amount": 549.24
+    },
+    {
+      "date": "2026-04-24",
+      "amount": 431.12
+    },
+    {
+      "date": "2026-04-25",
+      "amount": 171.04
+    },
+    {
+      "date": "2026-04-26",
+      "amount": 117.6
+    },
+    {
+      "date": "2026-04-27",
+      "amount": 204.26
+    },
+    {
+      "date": "2026-04-28",
+      "amount": 171.19
+    },
+    {
+      "date": "2026-04-29",
+      "amount": 288.19
+    },
+    {
+      "date": "2026-04-30",
+      "amount": 340.93
+    },
+    {
+      "date": "2026-05-01",
+      "amount": 445.44
+    },
+    {
+      "date": "2026-05-02",
+      "amount": 132.32
+    },
+    {
+      "date": "2026-05-03",
+      "amount": 44.04
+    },
+    {
+      "date": "2026-05-04",
+      "amount": 446.34
+    },
+    {
+      "date": "2026-05-05",
+      "amount": 411.03
+    },
+    {
+      "date": "2026-05-06",
+      "amount": 467.44
+    },
+    {
+      "date": "2026-05-07",
+      "amount": 405.39
+    },
+    {
+      "date": "2026-05-08",
+      "amount": 674.12
+    },
+    {
+      "date": "2026-05-09",
+      "amount": 260.2
+    },
+    {
+      "date": "2026-05-10",
+      "amount": 44.61
+    },
+    {
+      "date": "2026-05-11",
+      "amount": 341.72
+    },
+    {
+      "date": "2026-05-12",
+      "amount": 762.82
+    },
+    {
+      "date": "2026-05-13",
+      "amount": 750.72
+    },
+    {
+      "date": "2026-05-14",
+      "amount": 455.83
+    },
+    {
+      "date": "2026-05-15",
+      "amount": 424.44
+    },
+    {
+      "date": "2026-05-16",
+      "amount": 137.45
+    },
+    {
+      "date": "2026-05-17",
+      "amount": 79.18
+    },
+    {
+      "date": "2026-05-18",
+      "amount": 478.77
+    },
+    {
+      "date": "2026-05-19",
+      "amount": 592.76
+    },
+    {
+      "date": "2026-05-20",
+      "amount": 415.51
+    },
+    {
+      "date": "2026-05-21",
+      "amount": 507.64
+    },
+    {
+      "date": "2026-05-22",
+      "amount": 581.19
+    },
+    {
+      "date": "2026-05-23",
+      "amount": 138.59
+    },
+    {
+      "date": "2026-05-24",
+      "amount": 191.84
+    },
+    {
+      "date": "2026-05-25",
+      "amount": 99.82
+    },
+    {
+      "date": "2026-05-26",
+      "amount": 423.73
+    },
+    {
+      "date": "2026-05-27",
+      "amount": 401.69
+    },
+    {
+      "date": "2026-05-28",
+      "amount": 499.1
+    },
+    {
+      "date": "2026-05-29",
+      "amount": 604.94
+    },
+    {
+      "date": "2026-05-30",
+      "amount": 271.71
+    },
+    {
+      "date": "2026-05-31",
+      "amount": 245.76
+    },
+    {
+      "date": "2026-06-01",
+      "amount": 421.77
+    },
+    {
+      "date": "2026-06-02",
+      "amount": 497.8
+    },
+    {
+      "date": "2026-06-03",
+      "amount": 587.47
+    },
+    {
+      "date": "2026-06-04",
+      "amount": 637.67
+    },
+    {
+      "date": "2026-06-05",
+      "amount": 928.02
+    },
+    {
+      "date": "2026-06-06",
+      "amount": 347.26
+    },
+    {
+      "date": "2026-06-07",
+      "amount": 139.64
+    },
+    {
+      "date": "2026-06-08",
+      "amount": 453.33
+    },
+    {
+      "date": "2026-06-09",
+      "amount": 622.47
+    },
+    {
+      "date": "2026-06-10",
+      "amount": 508.33
+    },
+    {
+      "date": "2026-06-11",
+      "amount": 667.54
+    },
+    {
+      "date": "2026-06-12",
+      "amount": 662.62
+    },
+    {
+      "date": "2026-06-13",
+      "amount": 126.98
+    },
+    {
+      "date": "2026-06-14",
+      "amount": 38.84
+    },
+    {
+      "date": "2026-06-15",
+      "amount": 464.59
+    },
+    {
+      "date": "2026-06-16",
+      "amount": 513.5
+    },
+    {
+      "date": "2026-06-17",
+      "amount": 651.18
+    },
+    {
+      "date": "2026-06-18",
+      "amount": 736.23
+    },
+    {
+      "date": "2026-06-19",
+      "amount": 878.66
+    },
+    {
+      "date": "2026-06-20",
+      "amount": 342.55
+    },
+    {
+      "date": "2026-06-21",
+      "amount": 325.54
+    },
+    {
+      "date": "2026-06-22",
+      "amount": 591.81
+    },
+    {
+      "date": "2026-06-23",
+      "amount": 816
+    },
+    {
+      "date": "2026-06-24",
+      "amount": 1025.7
+    },
+    {
+      "date": "2026-06-25",
+      "amount": 900.79
+    },
+    {
+      "date": "2026-06-26",
+      "amount": 701.88
+    },
+    {
+      "date": "2026-06-27",
+      "amount": 325.79
+    },
+    {
+      "date": "2026-06-28",
+      "amount": 38.67
+    },
+    {
+      "date": "2026-06-29",
+      "amount": 309.06
+    },
+    {
+      "date": "2026-06-30",
+      "amount": 511.66
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2026-02",
+      "label": "Feb 2026",
+      "kind": "actual",
+      "topups": 9,
+      "total": 718.64,
+      "momChange": null,
+      "dailyBurn": 25.67,
+      "cumulative": 718.64
+    },
+    {
+      "month": "2026-03",
+      "label": "Mar 2026",
+      "kind": "actual",
+      "topups": 31,
+      "total": 3765.65,
+      "momChange": 3047.01,
+      "dailyBurn": 121.47,
+      "cumulative": 4484.29
+    },
+    {
+      "month": "2026-04",
+      "label": "Apr 2026",
+      "kind": "actual",
+      "topups": 30,
+      "total": 6500.65,
+      "momChange": 2735,
+      "dailyBurn": 216.69,
+      "cumulative": 10984.94
+    },
+    {
+      "month": "2026-05",
+      "label": "May 2026",
+      "kind": "actual",
+      "topups": 31,
+      "total": 11736.14,
+      "momChange": 5235.49,
+      "dailyBurn": 378.59,
+      "cumulative": 22721.08
+    },
+    {
+      "month": "2026-06",
+      "label": "Jun 2026",
+      "kind": "actual",
+      "topups": 30,
+      "total": 15773.35,
+      "momChange": 4037.21,
+      "dailyBurn": 525.78,
+      "cumulative": 38494.43
+    },
+    {
+      "month": "2026-07",
+      "label": "Jul 2026",
+      "kind": "proj",
+      "topups": null,
+      "total": 16080.6,
+      "momChange": null,
+      "dailyBurn": 518.73,
+      "cumulative": 54575.03
+    },
+    {
+      "month": "2026-08",
+      "label": "Aug 2026",
+      "kind": "proj",
+      "topups": null,
+      "total": 14622.7,
+      "momChange": null,
+      "dailyBurn": 471.7,
+      "cumulative": 69197.73
+    },
+    {
+      "month": "2026-09",
+      "label": "Sep 2026",
+      "kind": "proj",
+      "topups": null,
+      "total": 14151,
+      "momChange": null,
+      "dailyBurn": 471.7,
+      "cumulative": 83348.73
+    }
+  ],
+  "weekly": [
+    {
+      "week": "2026-W08",
+      "start": "2026-02-16",
+      "end": "2026-02-22",
+      "dates": [
+        "2026-02-20",
+        "2026-02-21",
+        "2026-02-22"
+      ],
+      "count": 3,
+      "total": 55.15
+    },
+    {
+      "week": "2026-W09",
+      "start": "2026-02-23",
+      "end": "2026-03-01",
+      "dates": [
+        "2026-02-23",
+        "2026-02-24",
+        "2026-02-25",
+        "2026-02-26",
+        "2026-02-27",
+        "2026-02-28",
+        "2026-03-01"
+      ],
+      "count": 7,
+      "total": 697.3
+    },
+    {
+      "week": "2026-W10",
+      "start": "2026-03-02",
+      "end": "2026-03-08",
+      "dates": [
+        "2026-03-02",
+        "2026-03-03",
+        "2026-03-04",
+        "2026-03-05",
+        "2026-03-06",
+        "2026-03-07",
+        "2026-03-08"
+      ],
+      "count": 7,
+      "total": 634.79
+    },
+    {
+      "week": "2026-W11",
+      "start": "2026-03-09",
+      "end": "2026-03-15",
+      "dates": [
+        "2026-03-09",
+        "2026-03-10",
+        "2026-03-11",
+        "2026-03-12",
+        "2026-03-13",
+        "2026-03-14",
+        "2026-03-15"
+      ],
+      "count": 7,
+      "total": 617.47
+    },
+    {
+      "week": "2026-W12",
+      "start": "2026-03-16",
+      "end": "2026-03-22",
+      "dates": [
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20",
+        "2026-03-21",
+        "2026-03-22"
+      ],
+      "count": 7,
+      "total": 890.29
+    },
+    {
+      "week": "2026-W13",
+      "start": "2026-03-23",
+      "end": "2026-03-29",
+      "dates": [
+        "2026-03-23",
+        "2026-03-24",
+        "2026-03-25",
+        "2026-03-26",
+        "2026-03-27",
+        "2026-03-28",
+        "2026-03-29"
+      ],
+      "count": 7,
+      "total": 1269.43
+    },
+    {
+      "week": "2026-W14",
+      "start": "2026-03-30",
+      "end": "2026-04-05",
+      "dates": [
+        "2026-03-30",
+        "2026-03-31",
+        "2026-04-01",
+        "2026-04-02",
+        "2026-04-03",
+        "2026-04-04",
+        "2026-04-05"
+      ],
+      "count": 7,
+      "total": 1157.13
+    },
+    {
+      "week": "2026-W15",
+      "start": "2026-04-06",
+      "end": "2026-04-12",
+      "dates": [
+        "2026-04-06",
+        "2026-04-07",
+        "2026-04-08",
+        "2026-04-09",
+        "2026-04-10",
+        "2026-04-11",
+        "2026-04-12"
+      ],
+      "count": 7,
+      "total": 988.05
+    },
+    {
+      "week": "2026-W16",
+      "start": "2026-04-13",
+      "end": "2026-04-19",
+      "dates": [
+        "2026-04-13",
+        "2026-04-14",
+        "2026-04-15",
+        "2026-04-16",
+        "2026-04-17",
+        "2026-04-18",
+        "2026-04-19"
+      ],
+      "count": 7,
+      "total": 1487.13
+    },
+    {
+      "week": "2026-W17",
+      "start": "2026-04-20",
+      "end": "2026-04-26",
+      "dates": [
+        "2026-04-20",
+        "2026-04-21",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26"
+      ],
+      "count": 7,
+      "total": 2183.63
+    },
+    {
+      "week": "2026-W18",
+      "start": "2026-04-27",
+      "end": "2026-05-03",
+      "dates": [
+        "2026-04-27",
+        "2026-04-28",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-03"
+      ],
+      "count": 7,
+      "total": 1626.37
+    },
+    {
+      "week": "2026-W19",
+      "start": "2026-05-04",
+      "end": "2026-05-10",
+      "dates": [
+        "2026-05-04",
+        "2026-05-05",
+        "2026-05-06",
+        "2026-05-07",
+        "2026-05-08",
+        "2026-05-09",
+        "2026-05-10"
+      ],
+      "count": 7,
+      "total": 2709.13
+    },
+    {
+      "week": "2026-W20",
+      "start": "2026-05-11",
+      "end": "2026-05-17",
+      "dates": [
+        "2026-05-11",
+        "2026-05-12",
+        "2026-05-13",
+        "2026-05-14",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17"
+      ],
+      "count": 7,
+      "total": 2952.16
+    },
+    {
+      "week": "2026-W21",
+      "start": "2026-05-18",
+      "end": "2026-05-24",
+      "dates": [
+        "2026-05-18",
+        "2026-05-19",
+        "2026-05-20",
+        "2026-05-21",
+        "2026-05-22",
+        "2026-05-23",
+        "2026-05-24"
+      ],
+      "count": 7,
+      "total": 2906.3
+    },
+    {
+      "week": "2026-W22",
+      "start": "2026-05-25",
+      "end": "2026-05-31",
+      "dates": [
+        "2026-05-25",
+        "2026-05-26",
+        "2026-05-27",
+        "2026-05-28",
+        "2026-05-29",
+        "2026-05-30",
+        "2026-05-31"
+      ],
+      "count": 7,
+      "total": 2546.75
+    },
+    {
+      "week": "2026-W23",
+      "start": "2026-06-01",
+      "end": "2026-06-07",
+      "dates": [
+        "2026-06-01",
+        "2026-06-02",
+        "2026-06-03",
+        "2026-06-04",
+        "2026-06-05",
+        "2026-06-06",
+        "2026-06-07"
+      ],
+      "count": 7,
+      "total": 3559.63
+    },
+    {
+      "week": "2026-W24",
+      "start": "2026-06-08",
+      "end": "2026-06-14",
+      "dates": [
+        "2026-06-08",
+        "2026-06-09",
+        "2026-06-10",
+        "2026-06-11",
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14"
+      ],
+      "count": 7,
+      "total": 3080.11
+    },
+    {
+      "week": "2026-W25",
+      "start": "2026-06-15",
+      "end": "2026-06-21",
+      "dates": [
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20",
+        "2026-06-21"
+      ],
+      "count": 7,
+      "total": 3912.25
+    },
+    {
+      "week": "2026-W26",
+      "start": "2026-06-22",
+      "end": "2026-06-28",
+      "dates": [
+        "2026-06-22",
+        "2026-06-23",
+        "2026-06-24",
+        "2026-06-25",
+        "2026-06-26",
+        "2026-06-27",
+        "2026-06-28"
+      ],
+      "count": 7,
+      "total": 4400.64
+    },
+    {
+      "week": "2026-W27",
+      "start": "2026-06-29",
+      "end": "2026-07-05",
+      "dates": [
+        "2026-06-29",
+        "2026-06-30"
+      ],
+      "count": 2,
+      "total": 820.72
+    }
+  ],
+  "byModel": [
+    {
+      "date": "2026-02-20",
+      "family": "Opus",
+      "amount": 0.17
+    },
+    {
+      "date": "2026-02-20",
+      "family": "Sonnet",
+      "amount": 2.45
+    },
+    {
+      "date": "2026-02-20",
+      "family": "Haiku",
+      "amount": 1.59
+    },
+    {
+      "date": "2026-02-21",
+      "family": "Opus",
+      "amount": 0.12
+    },
+    {
+      "date": "2026-02-21",
+      "family": "Sonnet",
+      "amount": 20.67
+    },
+    {
+      "date": "2026-02-21",
+      "family": "Haiku",
+      "amount": 2.36
+    },
+    {
+      "date": "2026-02-22",
+      "family": "Opus",
+      "amount": 0.17
+    },
+    {
+      "date": "2026-02-22",
+      "family": "Sonnet",
+      "amount": 26.59
+    },
+    {
+      "date": "2026-02-22",
+      "family": "Haiku",
+      "amount": 1.03
+    },
+    {
+      "date": "2026-02-23",
+      "family": "Opus",
+      "amount": 45.98
+    },
+    {
+      "date": "2026-02-23",
+      "family": "Sonnet",
+      "amount": 55.86
+    },
+    {
+      "date": "2026-02-23",
+      "family": "Haiku",
+      "amount": 6.19
+    },
+    {
+      "date": "2026-02-24",
+      "family": "Opus",
+      "amount": 103.4
+    },
+    {
+      "date": "2026-02-24",
+      "family": "Sonnet",
+      "amount": 57.14
+    },
+    {
+      "date": "2026-02-24",
+      "family": "Haiku",
+      "amount": 8.08
+    },
+    {
+      "date": "2026-02-25",
+      "family": "Opus",
+      "amount": 49.01
+    },
+    {
+      "date": "2026-02-25",
+      "family": "Sonnet",
+      "amount": 92.85
+    },
+    {
+      "date": "2026-02-25",
+      "family": "Haiku",
+      "amount": 5.53
+    },
+    {
+      "date": "2026-02-26",
+      "family": "Opus",
+      "amount": 29.72
+    },
+    {
+      "date": "2026-02-26",
+      "family": "Sonnet",
+      "amount": 103.63
+    },
+    {
+      "date": "2026-02-26",
+      "family": "Haiku",
+      "amount": 4.93
+    },
+    {
+      "date": "2026-02-27",
+      "family": "Opus",
+      "amount": 7.61
+    },
+    {
+      "date": "2026-02-27",
+      "family": "Sonnet",
+      "amount": 59.44
+    },
+    {
+      "date": "2026-02-27",
+      "family": "Haiku",
+      "amount": 2.97
+    },
+    {
+      "date": "2026-02-28",
+      "family": "Opus",
+      "amount": 12.86
+    },
+    {
+      "date": "2026-02-28",
+      "family": "Sonnet",
+      "amount": 16.84
+    },
+    {
+      "date": "2026-02-28",
+      "family": "Haiku",
+      "amount": 1.45
+    },
+    {
+      "date": "2026-03-01",
+      "family": "Sonnet",
+      "amount": 33.06
+    },
+    {
+      "date": "2026-03-01",
+      "family": "Haiku",
+      "amount": 0.76
+    },
+    {
+      "date": "2026-03-02",
+      "family": "Opus",
+      "amount": 6.98
+    },
+    {
+      "date": "2026-03-02",
+      "family": "Sonnet",
+      "amount": 77.91
+    },
+    {
+      "date": "2026-03-02",
+      "family": "Haiku",
+      "amount": 1.14
+    },
+    {
+      "date": "2026-03-03",
+      "family": "Opus",
+      "amount": 21.34
+    },
+    {
+      "date": "2026-03-03",
+      "family": "Sonnet",
+      "amount": 85.97
+    },
+    {
+      "date": "2026-03-03",
+      "family": "Haiku",
+      "amount": 2.38
+    },
+    {
+      "date": "2026-03-04",
+      "family": "Opus",
+      "amount": 12.52
+    },
+    {
+      "date": "2026-03-04",
+      "family": "Sonnet",
+      "amount": 72.51
+    },
+    {
+      "date": "2026-03-04",
+      "family": "Haiku",
+      "amount": 1.69
+    },
+    {
+      "date": "2026-03-05",
+      "family": "Opus",
+      "amount": 42.74
+    },
+    {
+      "date": "2026-03-05",
+      "family": "Sonnet",
+      "amount": 75.48
+    },
+    {
+      "date": "2026-03-05",
+      "family": "Haiku",
+      "amount": 2
+    },
+    {
+      "date": "2026-03-06",
+      "family": "Opus",
+      "amount": 41.33
+    },
+    {
+      "date": "2026-03-06",
+      "family": "Sonnet",
+      "amount": 85.46
+    },
+    {
+      "date": "2026-03-06",
+      "family": "Haiku",
+      "amount": 1.79
+    },
+    {
+      "date": "2026-03-07",
+      "family": "Opus",
+      "amount": 0.25
+    },
+    {
+      "date": "2026-03-07",
+      "family": "Sonnet",
+      "amount": 57.89
+    },
+    {
+      "date": "2026-03-07",
+      "family": "Haiku",
+      "amount": 2.53
+    },
+    {
+      "date": "2026-03-08",
+      "family": "Opus",
+      "amount": 4.76
+    },
+    {
+      "date": "2026-03-08",
+      "family": "Sonnet",
+      "amount": 36.07
+    },
+    {
+      "date": "2026-03-08",
+      "family": "Haiku",
+      "amount": 2.06
+    },
+    {
+      "date": "2026-03-09",
+      "family": "Opus",
+      "amount": 1.31
+    },
+    {
+      "date": "2026-03-09",
+      "family": "Sonnet",
+      "amount": 83.52
+    },
+    {
+      "date": "2026-03-09",
+      "family": "Haiku",
+      "amount": 2.6
+    },
+    {
+      "date": "2026-03-10",
+      "family": "Opus",
+      "amount": 35.71
+    },
+    {
+      "date": "2026-03-10",
+      "family": "Sonnet",
+      "amount": 100.87
+    },
+    {
+      "date": "2026-03-10",
+      "family": "Haiku",
+      "amount": 6.78
+    },
+    {
+      "date": "2026-03-11",
+      "family": "Opus",
+      "amount": 41.03
+    },
+    {
+      "date": "2026-03-11",
+      "family": "Sonnet",
+      "amount": 62.83
+    },
+    {
+      "date": "2026-03-11",
+      "family": "Haiku",
+      "amount": 1.4
+    },
+    {
+      "date": "2026-03-12",
+      "family": "Opus",
+      "amount": 29.86
+    },
+    {
+      "date": "2026-03-12",
+      "family": "Sonnet",
+      "amount": 84.22
+    },
+    {
+      "date": "2026-03-12",
+      "family": "Haiku",
+      "amount": 3.92
+    },
+    {
+      "date": "2026-03-13",
+      "family": "Opus",
+      "amount": 28.08
+    },
+    {
+      "date": "2026-03-13",
+      "family": "Sonnet",
+      "amount": 49.93
+    },
+    {
+      "date": "2026-03-13",
+      "family": "Haiku",
+      "amount": 0.88
+    },
+    {
+      "date": "2026-03-14",
+      "family": "Opus",
+      "amount": 1.06
+    },
+    {
+      "date": "2026-03-14",
+      "family": "Sonnet",
+      "amount": 48.59
+    },
+    {
+      "date": "2026-03-14",
+      "family": "Haiku",
+      "amount": 2.27
+    },
+    {
+      "date": "2026-03-15",
+      "family": "Sonnet",
+      "amount": 30.77
+    },
+    {
+      "date": "2026-03-15",
+      "family": "Haiku",
+      "amount": 1.84
+    },
+    {
+      "date": "2026-03-16",
+      "family": "Opus",
+      "amount": 28.1
+    },
+    {
+      "date": "2026-03-16",
+      "family": "Sonnet",
+      "amount": 80.16
+    },
+    {
+      "date": "2026-03-16",
+      "family": "Haiku",
+      "amount": 5.74
+    },
+    {
+      "date": "2026-03-17",
+      "family": "Opus",
+      "amount": 48.03
+    },
+    {
+      "date": "2026-03-17",
+      "family": "Sonnet",
+      "amount": 95.22
+    },
+    {
+      "date": "2026-03-17",
+      "family": "Haiku",
+      "amount": 1.67
+    },
+    {
+      "date": "2026-03-18",
+      "family": "Opus",
+      "amount": 35.6
+    },
+    {
+      "date": "2026-03-18",
+      "family": "Sonnet",
+      "amount": 79.56
+    },
+    {
+      "date": "2026-03-18",
+      "family": "Haiku",
+      "amount": 1.29
+    },
+    {
+      "date": "2026-03-19",
+      "family": "Opus",
+      "amount": 82.41
+    },
+    {
+      "date": "2026-03-19",
+      "family": "Sonnet",
+      "amount": 45.99
+    },
+    {
+      "date": "2026-03-19",
+      "family": "Haiku",
+      "amount": 0.51
+    },
+    {
+      "date": "2026-03-20",
+      "family": "Opus",
+      "amount": 123.81
+    },
+    {
+      "date": "2026-03-20",
+      "family": "Sonnet",
+      "amount": 106.3
+    },
+    {
+      "date": "2026-03-20",
+      "family": "Haiku",
+      "amount": 5.19
+    },
+    {
+      "date": "2026-03-21",
+      "family": "Opus",
+      "amount": 50.3
+    },
+    {
+      "date": "2026-03-21",
+      "family": "Sonnet",
+      "amount": 56.33
+    },
+    {
+      "date": "2026-03-21",
+      "family": "Haiku",
+      "amount": 0.55
+    },
+    {
+      "date": "2026-03-22",
+      "family": "Sonnet",
+      "amount": 43.4
+    },
+    {
+      "date": "2026-03-22",
+      "family": "Haiku",
+      "amount": 0.14
+    },
+    {
+      "date": "2026-03-23",
+      "family": "Opus",
+      "amount": 50.88
+    },
+    {
+      "date": "2026-03-23",
+      "family": "Sonnet",
+      "amount": 75.37
+    },
+    {
+      "date": "2026-03-23",
+      "family": "Haiku",
+      "amount": 0.71
+    },
+    {
+      "date": "2026-03-24",
+      "family": "Opus",
+      "amount": 119.5
+    },
+    {
+      "date": "2026-03-24",
+      "family": "Sonnet",
+      "amount": 165.52
+    },
+    {
+      "date": "2026-03-24",
+      "family": "Haiku",
+      "amount": 4.69
+    },
+    {
+      "date": "2026-03-25",
+      "family": "Opus",
+      "amount": 51.4
+    },
+    {
+      "date": "2026-03-25",
+      "family": "Sonnet",
+      "amount": 144.15
+    },
+    {
+      "date": "2026-03-25",
+      "family": "Haiku",
+      "amount": 4.61
+    },
+    {
+      "date": "2026-03-26",
+      "family": "Opus",
+      "amount": 139.51
+    },
+    {
+      "date": "2026-03-26",
+      "family": "Sonnet",
+      "amount": 119.35
+    },
+    {
+      "date": "2026-03-26",
+      "family": "Haiku",
+      "amount": 2.93
+    },
+    {
+      "date": "2026-03-27",
+      "family": "Opus",
+      "amount": 62.92
+    },
+    {
+      "date": "2026-03-27",
+      "family": "Sonnet",
+      "amount": 181.86
+    },
+    {
+      "date": "2026-03-27",
+      "family": "Haiku",
+      "amount": 7.52
+    },
+    {
+      "date": "2026-03-28",
+      "family": "Opus",
+      "amount": 5.02
+    },
+    {
+      "date": "2026-03-28",
+      "family": "Sonnet",
+      "amount": 58.33
+    },
+    {
+      "date": "2026-03-28",
+      "family": "Haiku",
+      "amount": 2.73
+    },
+    {
+      "date": "2026-03-29",
+      "family": "Sonnet",
+      "amount": 70.38
+    },
+    {
+      "date": "2026-03-29",
+      "family": "Haiku",
+      "amount": 2.05
+    },
+    {
+      "date": "2026-03-30",
+      "family": "Opus",
+      "amount": 20.45
+    },
+    {
+      "date": "2026-03-30",
+      "family": "Sonnet",
+      "amount": 87.45
+    },
+    {
+      "date": "2026-03-30",
+      "family": "Haiku",
+      "amount": 4.12
+    },
+    {
+      "date": "2026-03-31",
+      "family": "Opus",
+      "amount": 33.25
+    },
+    {
+      "date": "2026-03-31",
+      "family": "Sonnet",
+      "amount": 169.18
+    },
+    {
+      "date": "2026-03-31",
+      "family": "Haiku",
+      "amount": 5.42
+    },
+    {
+      "date": "2026-04-01",
+      "family": "Opus",
+      "amount": 21.65
+    },
+    {
+      "date": "2026-04-01",
+      "family": "Sonnet",
+      "amount": 187.02
+    },
+    {
+      "date": "2026-04-01",
+      "family": "Haiku",
+      "amount": 5.98
+    },
+    {
+      "date": "2026-04-02",
+      "family": "Opus",
+      "amount": 43.35
+    },
+    {
+      "date": "2026-04-02",
+      "family": "Sonnet",
+      "amount": 201.78
+    },
+    {
+      "date": "2026-04-02",
+      "family": "Haiku",
+      "amount": 8.66
+    },
+    {
+      "date": "2026-04-03",
+      "family": "Opus",
+      "amount": 43.85
+    },
+    {
+      "date": "2026-04-03",
+      "family": "Sonnet",
+      "amount": 143.4
+    },
+    {
+      "date": "2026-04-03",
+      "family": "Haiku",
+      "amount": 2.37
+    },
+    {
+      "date": "2026-04-04",
+      "family": "Sonnet",
+      "amount": 78.89
+    },
+    {
+      "date": "2026-04-04",
+      "family": "Haiku",
+      "amount": 0.41
+    },
+    {
+      "date": "2026-04-05",
+      "family": "Sonnet",
+      "amount": 98.37
+    },
+    {
+      "date": "2026-04-05",
+      "family": "Haiku",
+      "amount": 1.53
+    },
+    {
+      "date": "2026-04-06",
+      "family": "Opus",
+      "amount": 40.72
+    },
+    {
+      "date": "2026-04-06",
+      "family": "Sonnet",
+      "amount": 83.6
+    },
+    {
+      "date": "2026-04-06",
+      "family": "Haiku",
+      "amount": 1.83
+    },
+    {
+      "date": "2026-04-07",
+      "family": "Opus",
+      "amount": 68.95
+    },
+    {
+      "date": "2026-04-07",
+      "family": "Sonnet",
+      "amount": 94
+    },
+    {
+      "date": "2026-04-07",
+      "family": "Haiku",
+      "amount": 0.74
+    },
+    {
+      "date": "2026-04-08",
+      "family": "Opus",
+      "amount": 80.42
+    },
+    {
+      "date": "2026-04-08",
+      "family": "Sonnet",
+      "amount": 129.76
+    },
+    {
+      "date": "2026-04-08",
+      "family": "Haiku",
+      "amount": 3.27
+    },
+    {
+      "date": "2026-04-09",
+      "family": "Opus",
+      "amount": 111.98
+    },
+    {
+      "date": "2026-04-09",
+      "family": "Sonnet",
+      "amount": 118.32
+    },
+    {
+      "date": "2026-04-09",
+      "family": "Haiku",
+      "amount": 2.88
+    },
+    {
+      "date": "2026-04-10",
+      "family": "Opus",
+      "amount": 66.95
+    },
+    {
+      "date": "2026-04-10",
+      "family": "Sonnet",
+      "amount": 95.32
+    },
+    {
+      "date": "2026-04-10",
+      "family": "Haiku",
+      "amount": 2.91
+    },
+    {
+      "date": "2026-04-11",
+      "family": "Opus",
+      "amount": 8.67
+    },
+    {
+      "date": "2026-04-11",
+      "family": "Sonnet",
+      "amount": 42.15
+    },
+    {
+      "date": "2026-04-11",
+      "family": "Haiku",
+      "amount": 2.64
+    },
+    {
+      "date": "2026-04-12",
+      "family": "Opus",
+      "amount": 1.27
+    },
+    {
+      "date": "2026-04-12",
+      "family": "Sonnet",
+      "amount": 30.81
+    },
+    {
+      "date": "2026-04-12",
+      "family": "Haiku",
+      "amount": 0.87
+    },
+    {
+      "date": "2026-04-13",
+      "family": "Opus",
+      "amount": 58.39
+    },
+    {
+      "date": "2026-04-13",
+      "family": "Sonnet",
+      "amount": 98.94
+    },
+    {
+      "date": "2026-04-13",
+      "family": "Haiku",
+      "amount": 3.95
+    },
+    {
+      "date": "2026-04-14",
+      "family": "Opus",
+      "amount": 149.31
+    },
+    {
+      "date": "2026-04-14",
+      "family": "Sonnet",
+      "amount": 88.21
+    },
+    {
+      "date": "2026-04-14",
+      "family": "Haiku",
+      "amount": 1.9
+    },
+    {
+      "date": "2026-04-15",
+      "family": "Opus",
+      "amount": 196.53
+    },
+    {
+      "date": "2026-04-15",
+      "family": "Sonnet",
+      "amount": 86.37
+    },
+    {
+      "date": "2026-04-15",
+      "family": "Haiku",
+      "amount": 5.9
+    },
+    {
+      "date": "2026-04-16",
+      "family": "Opus",
+      "amount": 234.97
+    },
+    {
+      "date": "2026-04-16",
+      "family": "Sonnet",
+      "amount": 52.64
+    },
+    {
+      "date": "2026-04-16",
+      "family": "Haiku",
+      "amount": 5.81
+    },
+    {
+      "date": "2026-04-17",
+      "family": "Opus",
+      "amount": 310.95
+    },
+    {
+      "date": "2026-04-17",
+      "family": "Sonnet",
+      "amount": 47.65
+    },
+    {
+      "date": "2026-04-17",
+      "family": "Haiku",
+      "amount": 2.38
+    },
+    {
+      "date": "2026-04-18",
+      "family": "Opus",
+      "amount": 75.02
+    },
+    {
+      "date": "2026-04-18",
+      "family": "Sonnet",
+      "amount": 23.4
+    },
+    {
+      "date": "2026-04-18",
+      "family": "Haiku",
+      "amount": 1
+    },
+    {
+      "date": "2026-04-19",
+      "family": "Opus",
+      "amount": 27.23
+    },
+    {
+      "date": "2026-04-19",
+      "family": "Sonnet",
+      "amount": 16.2
+    },
+    {
+      "date": "2026-04-19",
+      "family": "Haiku",
+      "amount": 0.37
+    },
+    {
+      "date": "2026-04-20",
+      "family": "Opus",
+      "amount": 90.27
+    },
+    {
+      "date": "2026-04-20",
+      "family": "Sonnet",
+      "amount": 51.98
+    },
+    {
+      "date": "2026-04-20",
+      "family": "Haiku",
+      "amount": 2.87
+    },
+    {
+      "date": "2026-04-21",
+      "family": "Opus",
+      "amount": 342.41
+    },
+    {
+      "date": "2026-04-21",
+      "family": "Sonnet",
+      "amount": 98.15
+    },
+    {
+      "date": "2026-04-21",
+      "family": "Haiku",
+      "amount": 2.7
+    },
+    {
+      "date": "2026-04-22",
+      "family": "Opus",
+      "amount": 264.07
+    },
+    {
+      "date": "2026-04-22",
+      "family": "Sonnet",
+      "amount": 57.58
+    },
+    {
+      "date": "2026-04-22",
+      "family": "Haiku",
+      "amount": 4.61
+    },
+    {
+      "date": "2026-04-23",
+      "family": "Opus",
+      "amount": 464.26
+    },
+    {
+      "date": "2026-04-23",
+      "family": "Sonnet",
+      "amount": 80.18
+    },
+    {
+      "date": "2026-04-23",
+      "family": "Haiku",
+      "amount": 4.8
+    },
+    {
+      "date": "2026-04-24",
+      "family": "Opus",
+      "amount": 379.4
+    },
+    {
+      "date": "2026-04-24",
+      "family": "Sonnet",
+      "amount": 49.96
+    },
+    {
+      "date": "2026-04-24",
+      "family": "Haiku",
+      "amount": 1.77
+    },
+    {
+      "date": "2026-04-25",
+      "family": "Opus",
+      "amount": 110.65
+    },
+    {
+      "date": "2026-04-25",
+      "family": "Sonnet",
+      "amount": 58.06
+    },
+    {
+      "date": "2026-04-25",
+      "family": "Haiku",
+      "amount": 2.33
+    },
+    {
+      "date": "2026-04-26",
+      "family": "Opus",
+      "amount": 2.49
+    },
+    {
+      "date": "2026-04-26",
+      "family": "Sonnet",
+      "amount": 114.14
+    },
+    {
+      "date": "2026-04-26",
+      "family": "Haiku",
+      "amount": 0.97
+    },
+    {
+      "date": "2026-04-27",
+      "family": "Opus",
+      "amount": 94.5
+    },
+    {
+      "date": "2026-04-27",
+      "family": "Sonnet",
+      "amount": 109.03
+    },
+    {
+      "date": "2026-04-27",
+      "family": "Haiku",
+      "amount": 0.73
+    },
+    {
+      "date": "2026-04-28",
+      "family": "Opus",
+      "amount": 65.08
+    },
+    {
+      "date": "2026-04-28",
+      "family": "Sonnet",
+      "amount": 104.3
+    },
+    {
+      "date": "2026-04-28",
+      "family": "Haiku",
+      "amount": 1.81
+    },
+    {
+      "date": "2026-04-29",
+      "family": "Opus",
+      "amount": 210.9
+    },
+    {
+      "date": "2026-04-29",
+      "family": "Sonnet",
+      "amount": 73.53
+    },
+    {
+      "date": "2026-04-29",
+      "family": "Haiku",
+      "amount": 3.75
+    },
+    {
+      "date": "2026-04-30",
+      "family": "Opus",
+      "amount": 249.07
+    },
+    {
+      "date": "2026-04-30",
+      "family": "Sonnet",
+      "amount": 89.42
+    },
+    {
+      "date": "2026-04-30",
+      "family": "Haiku",
+      "amount": 2.44
+    },
+    {
+      "date": "2026-05-01",
+      "family": "Opus",
+      "amount": 410.16
+    },
+    {
+      "date": "2026-05-01",
+      "family": "Sonnet",
+      "amount": 31.55
+    },
+    {
+      "date": "2026-05-01",
+      "family": "Haiku",
+      "amount": 3.73
+    },
+    {
+      "date": "2026-05-02",
+      "family": "Opus",
+      "amount": 79.98
+    },
+    {
+      "date": "2026-05-02",
+      "family": "Sonnet",
+      "amount": 51.31
+    },
+    {
+      "date": "2026-05-02",
+      "family": "Haiku",
+      "amount": 1.03
+    },
+    {
+      "date": "2026-05-03",
+      "family": "Sonnet",
+      "amount": 43.77
+    },
+    {
+      "date": "2026-05-03",
+      "family": "Haiku",
+      "amount": 0.26
+    },
+    {
+      "date": "2026-05-04",
+      "family": "Opus",
+      "amount": 392.89
+    },
+    {
+      "date": "2026-05-04",
+      "family": "Sonnet",
+      "amount": 52.64
+    },
+    {
+      "date": "2026-05-04",
+      "family": "Haiku",
+      "amount": 0.8
+    },
+    {
+      "date": "2026-05-05",
+      "family": "Opus",
+      "amount": 295.58
+    },
+    {
+      "date": "2026-05-05",
+      "family": "Sonnet",
+      "amount": 113.8
+    },
+    {
+      "date": "2026-05-05",
+      "family": "Haiku",
+      "amount": 1.66
+    },
+    {
+      "date": "2026-05-06",
+      "family": "Opus",
+      "amount": 378.78
+    },
+    {
+      "date": "2026-05-06",
+      "family": "Sonnet",
+      "amount": 85.47
+    },
+    {
+      "date": "2026-05-06",
+      "family": "Haiku",
+      "amount": 3.18
+    },
+    {
+      "date": "2026-05-07",
+      "family": "Opus",
+      "amount": 315.43
+    },
+    {
+      "date": "2026-05-07",
+      "family": "Sonnet",
+      "amount": 83.52
+    },
+    {
+      "date": "2026-05-07",
+      "family": "Haiku",
+      "amount": 6.45
+    },
+    {
+      "date": "2026-05-08",
+      "family": "Opus",
+      "amount": 567.15
+    },
+    {
+      "date": "2026-05-08",
+      "family": "Sonnet",
+      "amount": 94.48
+    },
+    {
+      "date": "2026-05-08",
+      "family": "Haiku",
+      "amount": 12.49
+    },
+    {
+      "date": "2026-05-09",
+      "family": "Opus",
+      "amount": 208.67
+    },
+    {
+      "date": "2026-05-09",
+      "family": "Sonnet",
+      "amount": 50.85
+    },
+    {
+      "date": "2026-05-09",
+      "family": "Haiku",
+      "amount": 0.68
+    },
+    {
+      "date": "2026-05-10",
+      "family": "Opus",
+      "amount": 11.82
+    },
+    {
+      "date": "2026-05-10",
+      "family": "Sonnet",
+      "amount": 32.77
+    },
+    {
+      "date": "2026-05-10",
+      "family": "Haiku",
+      "amount": 0.03
+    },
+    {
+      "date": "2026-05-11",
+      "family": "Opus",
+      "amount": 252.22
+    },
+    {
+      "date": "2026-05-11",
+      "family": "Sonnet",
+      "amount": 85.52
+    },
+    {
+      "date": "2026-05-11",
+      "family": "Haiku",
+      "amount": 3.98
+    },
+    {
+      "date": "2026-05-12",
+      "family": "Opus",
+      "amount": 602.04
+    },
+    {
+      "date": "2026-05-12",
+      "family": "Sonnet",
+      "amount": 155.49
+    },
+    {
+      "date": "2026-05-12",
+      "family": "Haiku",
+      "amount": 5.29
+    },
+    {
+      "date": "2026-05-13",
+      "family": "Opus",
+      "amount": 642.49
+    },
+    {
+      "date": "2026-05-13",
+      "family": "Sonnet",
+      "amount": 107.1
+    },
+    {
+      "date": "2026-05-13",
+      "family": "Haiku",
+      "amount": 1.12
+    },
+    {
+      "date": "2026-05-14",
+      "family": "Opus",
+      "amount": 319.15
+    },
+    {
+      "date": "2026-05-14",
+      "family": "Sonnet",
+      "amount": 133.94
+    },
+    {
+      "date": "2026-05-14",
+      "family": "Haiku",
+      "amount": 2.74
+    },
+    {
+      "date": "2026-05-15",
+      "family": "Opus",
+      "amount": 356.44
+    },
+    {
+      "date": "2026-05-15",
+      "family": "Sonnet",
+      "amount": 65.34
+    },
+    {
+      "date": "2026-05-15",
+      "family": "Haiku",
+      "amount": 2.65
+    },
+    {
+      "date": "2026-05-16",
+      "family": "Opus",
+      "amount": 97.64
+    },
+    {
+      "date": "2026-05-16",
+      "family": "Sonnet",
+      "amount": 38.55
+    },
+    {
+      "date": "2026-05-16",
+      "family": "Haiku",
+      "amount": 1.26
+    },
+    {
+      "date": "2026-05-17",
+      "family": "Opus",
+      "amount": 36.61
+    },
+    {
+      "date": "2026-05-17",
+      "family": "Sonnet",
+      "amount": 42.11
+    },
+    {
+      "date": "2026-05-17",
+      "family": "Haiku",
+      "amount": 0.46
+    },
+    {
+      "date": "2026-05-18",
+      "family": "Opus",
+      "amount": 400.55
+    },
+    {
+      "date": "2026-05-18",
+      "family": "Sonnet",
+      "amount": 74.54
+    },
+    {
+      "date": "2026-05-18",
+      "family": "Haiku",
+      "amount": 3.68
+    },
+    {
+      "date": "2026-05-19",
+      "family": "Opus",
+      "amount": 496.83
+    },
+    {
+      "date": "2026-05-19",
+      "family": "Sonnet",
+      "amount": 90.19
+    },
+    {
+      "date": "2026-05-19",
+      "family": "Haiku",
+      "amount": 5.74
+    },
+    {
+      "date": "2026-05-20",
+      "family": "Opus",
+      "amount": 332
+    },
+    {
+      "date": "2026-05-20",
+      "family": "Sonnet",
+      "amount": 81.73
+    },
+    {
+      "date": "2026-05-20",
+      "family": "Haiku",
+      "amount": 1.78
+    },
+    {
+      "date": "2026-05-21",
+      "family": "Opus",
+      "amount": 443.38
+    },
+    {
+      "date": "2026-05-21",
+      "family": "Sonnet",
+      "amount": 63.01
+    },
+    {
+      "date": "2026-05-21",
+      "family": "Haiku",
+      "amount": 1.25
+    },
+    {
+      "date": "2026-05-22",
+      "family": "Opus",
+      "amount": 510.7
+    },
+    {
+      "date": "2026-05-22",
+      "family": "Sonnet",
+      "amount": 60.63
+    },
+    {
+      "date": "2026-05-22",
+      "family": "Haiku",
+      "amount": 9.87
+    },
+    {
+      "date": "2026-05-23",
+      "family": "Opus",
+      "amount": 108.75
+    },
+    {
+      "date": "2026-05-23",
+      "family": "Sonnet",
+      "amount": 25.46
+    },
+    {
+      "date": "2026-05-23",
+      "family": "Haiku",
+      "amount": 4.38
+    },
+    {
+      "date": "2026-05-24",
+      "family": "Opus",
+      "amount": 72.24
+    },
+    {
+      "date": "2026-05-24",
+      "family": "Sonnet",
+      "amount": 118.54
+    },
+    {
+      "date": "2026-05-24",
+      "family": "Haiku",
+      "amount": 1.06
+    },
+    {
+      "date": "2026-05-25",
+      "family": "Opus",
+      "amount": 35.48
+    },
+    {
+      "date": "2026-05-25",
+      "family": "Sonnet",
+      "amount": 63.4
+    },
+    {
+      "date": "2026-05-25",
+      "family": "Haiku",
+      "amount": 0.94
+    },
+    {
+      "date": "2026-05-26",
+      "family": "Opus",
+      "amount": 356.35
+    },
+    {
+      "date": "2026-05-26",
+      "family": "Sonnet",
+      "amount": 65.72
+    },
+    {
+      "date": "2026-05-26",
+      "family": "Haiku",
+      "amount": 1.67
+    },
+    {
+      "date": "2026-05-27",
+      "family": "Opus",
+      "amount": 328.25
+    },
+    {
+      "date": "2026-05-27",
+      "family": "Sonnet",
+      "amount": 72.7
+    },
+    {
+      "date": "2026-05-27",
+      "family": "Haiku",
+      "amount": 0.74
+    },
+    {
+      "date": "2026-05-28",
+      "family": "Opus",
+      "amount": 413.93
+    },
+    {
+      "date": "2026-05-28",
+      "family": "Sonnet",
+      "amount": 82.86
+    },
+    {
+      "date": "2026-05-28",
+      "family": "Haiku",
+      "amount": 2.31
+    },
+    {
+      "date": "2026-05-29",
+      "family": "Opus",
+      "amount": 523.04
+    },
+    {
+      "date": "2026-05-29",
+      "family": "Sonnet",
+      "amount": 76.25
+    },
+    {
+      "date": "2026-05-29",
+      "family": "Haiku",
+      "amount": 5.64
+    },
+    {
+      "date": "2026-05-30",
+      "family": "Opus",
+      "amount": 219.99
+    },
+    {
+      "date": "2026-05-30",
+      "family": "Sonnet",
+      "amount": 51.38
+    },
+    {
+      "date": "2026-05-30",
+      "family": "Haiku",
+      "amount": 0.34
+    },
+    {
+      "date": "2026-05-31",
+      "family": "Opus",
+      "amount": 232.97
+    },
+    {
+      "date": "2026-05-31",
+      "family": "Sonnet",
+      "amount": 12.73
+    },
+    {
+      "date": "2026-05-31",
+      "family": "Haiku",
+      "amount": 0.06
+    },
+    {
+      "date": "2026-06-01",
+      "family": "Opus",
+      "amount": 341.44
+    },
+    {
+      "date": "2026-06-01",
+      "family": "Sonnet",
+      "amount": 76.19
+    },
+    {
+      "date": "2026-06-01",
+      "family": "Haiku",
+      "amount": 4.14
+    },
+    {
+      "date": "2026-06-02",
+      "family": "Opus",
+      "amount": 420.16
+    },
+    {
+      "date": "2026-06-02",
+      "family": "Sonnet",
+      "amount": 70.22
+    },
+    {
+      "date": "2026-06-02",
+      "family": "Haiku",
+      "amount": 7.42
+    },
+    {
+      "date": "2026-06-03",
+      "family": "Opus",
+      "amount": 511.68
+    },
+    {
+      "date": "2026-06-03",
+      "family": "Sonnet",
+      "amount": 58.38
+    },
+    {
+      "date": "2026-06-03",
+      "family": "Haiku",
+      "amount": 17.42
+    },
+    {
+      "date": "2026-06-04",
+      "family": "Opus",
+      "amount": 564.39
+    },
+    {
+      "date": "2026-06-04",
+      "family": "Sonnet",
+      "amount": 53.38
+    },
+    {
+      "date": "2026-06-04",
+      "family": "Haiku",
+      "amount": 19.89
+    },
+    {
+      "date": "2026-06-05",
+      "family": "Opus",
+      "amount": 783.5
+    },
+    {
+      "date": "2026-06-05",
+      "family": "Sonnet",
+      "amount": 129.71
+    },
+    {
+      "date": "2026-06-05",
+      "family": "Haiku",
+      "amount": 14.8
+    },
+    {
+      "date": "2026-06-06",
+      "family": "Opus",
+      "amount": 305.04
+    },
+    {
+      "date": "2026-06-06",
+      "family": "Sonnet",
+      "amount": 41.89
+    },
+    {
+      "date": "2026-06-06",
+      "family": "Haiku",
+      "amount": 0.33
+    },
+    {
+      "date": "2026-06-07",
+      "family": "Opus",
+      "amount": 120.63
+    },
+    {
+      "date": "2026-06-07",
+      "family": "Sonnet",
+      "amount": 18.65
+    },
+    {
+      "date": "2026-06-07",
+      "family": "Haiku",
+      "amount": 0.35
+    },
+    {
+      "date": "2026-06-08",
+      "family": "Opus",
+      "amount": 275.05
+    },
+    {
+      "date": "2026-06-08",
+      "family": "Sonnet",
+      "amount": 176.18
+    },
+    {
+      "date": "2026-06-08",
+      "family": "Haiku",
+      "amount": 2.1
+    },
+    {
+      "date": "2026-06-09",
+      "family": "Opus",
+      "amount": 484.73
+    },
+    {
+      "date": "2026-06-09",
+      "family": "Sonnet",
+      "amount": 135.69
+    },
+    {
+      "date": "2026-06-09",
+      "family": "Haiku",
+      "amount": 2.05
+    },
+    {
+      "date": "2026-06-10",
+      "family": "Opus",
+      "amount": 364.06
+    },
+    {
+      "date": "2026-06-10",
+      "family": "Sonnet",
+      "amount": 122.03
+    },
+    {
+      "date": "2026-06-10",
+      "family": "Haiku",
+      "amount": 2.74
+    },
+    {
+      "date": "2026-06-10",
+      "family": "Fable",
+      "amount": 19.5
+    },
+    {
+      "date": "2026-06-11",
+      "family": "Opus",
+      "amount": 440.7
+    },
+    {
+      "date": "2026-06-11",
+      "family": "Sonnet",
+      "amount": 218.16
+    },
+    {
+      "date": "2026-06-11",
+      "family": "Haiku",
+      "amount": 2.71
+    },
+    {
+      "date": "2026-06-11",
+      "family": "Fable",
+      "amount": 5.98
+    },
+    {
+      "date": "2026-06-12",
+      "family": "Opus",
+      "amount": 472.94
+    },
+    {
+      "date": "2026-06-12",
+      "family": "Sonnet",
+      "amount": 120
+    },
+    {
+      "date": "2026-06-12",
+      "family": "Haiku",
+      "amount": 2.62
+    },
+    {
+      "date": "2026-06-12",
+      "family": "Fable",
+      "amount": 67.07
+    },
+    {
+      "date": "2026-06-13",
+      "family": "Opus",
+      "amount": 54.78
+    },
+    {
+      "date": "2026-06-13",
+      "family": "Sonnet",
+      "amount": 56.24
+    },
+    {
+      "date": "2026-06-13",
+      "family": "Haiku",
+      "amount": 1.69
+    },
+    {
+      "date": "2026-06-13",
+      "family": "Fable",
+      "amount": 14.27
+    },
+    {
+      "date": "2026-06-14",
+      "family": "Opus",
+      "amount": 9.82
+    },
+    {
+      "date": "2026-06-14",
+      "family": "Sonnet",
+      "amount": 28.32
+    },
+    {
+      "date": "2026-06-14",
+      "family": "Haiku",
+      "amount": 0.7
+    },
+    {
+      "date": "2026-06-15",
+      "family": "Opus",
+      "amount": 340.75
+    },
+    {
+      "date": "2026-06-15",
+      "family": "Sonnet",
+      "amount": 110.26
+    },
+    {
+      "date": "2026-06-15",
+      "family": "Haiku",
+      "amount": 13.58
+    },
+    {
+      "date": "2026-06-16",
+      "family": "Opus",
+      "amount": 378.77
+    },
+    {
+      "date": "2026-06-16",
+      "family": "Sonnet",
+      "amount": 129.28
+    },
+    {
+      "date": "2026-06-16",
+      "family": "Haiku",
+      "amount": 5.44
+    },
+    {
+      "date": "2026-06-17",
+      "family": "Opus",
+      "amount": 589.51
+    },
+    {
+      "date": "2026-06-17",
+      "family": "Sonnet",
+      "amount": 56.29
+    },
+    {
+      "date": "2026-06-17",
+      "family": "Haiku",
+      "amount": 5.39
+    },
+    {
+      "date": "2026-06-18",
+      "family": "Opus",
+      "amount": 613.04
+    },
+    {
+      "date": "2026-06-18",
+      "family": "Sonnet",
+      "amount": 114.76
+    },
+    {
+      "date": "2026-06-18",
+      "family": "Haiku",
+      "amount": 8.43
+    },
+    {
+      "date": "2026-06-19",
+      "family": "Opus",
+      "amount": 652.65
+    },
+    {
+      "date": "2026-06-19",
+      "family": "Sonnet",
+      "amount": 219.4
+    },
+    {
+      "date": "2026-06-19",
+      "family": "Haiku",
+      "amount": 6.61
+    },
+    {
+      "date": "2026-06-20",
+      "family": "Opus",
+      "amount": 327.23
+    },
+    {
+      "date": "2026-06-20",
+      "family": "Sonnet",
+      "amount": 13.05
+    },
+    {
+      "date": "2026-06-20",
+      "family": "Haiku",
+      "amount": 2.27
+    },
+    {
+      "date": "2026-06-21",
+      "family": "Opus",
+      "amount": 279.38
+    },
+    {
+      "date": "2026-06-21",
+      "family": "Sonnet",
+      "amount": 42.23
+    },
+    {
+      "date": "2026-06-21",
+      "family": "Haiku",
+      "amount": 3.93
+    },
+    {
+      "date": "2026-06-22",
+      "family": "Opus",
+      "amount": 535.07
+    },
+    {
+      "date": "2026-06-22",
+      "family": "Sonnet",
+      "amount": 50.93
+    },
+    {
+      "date": "2026-06-22",
+      "family": "Haiku",
+      "amount": 5.81
+    },
+    {
+      "date": "2026-06-23",
+      "family": "Opus",
+      "amount": 556.64
+    },
+    {
+      "date": "2026-06-23",
+      "family": "Sonnet",
+      "amount": 256.28
+    },
+    {
+      "date": "2026-06-23",
+      "family": "Haiku",
+      "amount": 3.07
+    },
+    {
+      "date": "2026-06-24",
+      "family": "Opus",
+      "amount": 663.53
+    },
+    {
+      "date": "2026-06-24",
+      "family": "Sonnet",
+      "amount": 359.02
+    },
+    {
+      "date": "2026-06-24",
+      "family": "Haiku",
+      "amount": 3.14
+    },
+    {
+      "date": "2026-06-25",
+      "family": "Opus",
+      "amount": 672.37
+    },
+    {
+      "date": "2026-06-25",
+      "family": "Sonnet",
+      "amount": 224.03
+    },
+    {
+      "date": "2026-06-25",
+      "family": "Haiku",
+      "amount": 4.38
+    },
+    {
+      "date": "2026-06-26",
+      "family": "Opus",
+      "amount": 574.7
+    },
+    {
+      "date": "2026-06-26",
+      "family": "Sonnet",
+      "amount": 122.56
+    },
+    {
+      "date": "2026-06-26",
+      "family": "Haiku",
+      "amount": 4.62
+    },
+    {
+      "date": "2026-06-27",
+      "family": "Opus",
+      "amount": 236.05
+    },
+    {
+      "date": "2026-06-27",
+      "family": "Sonnet",
+      "amount": 88.67
+    },
+    {
+      "date": "2026-06-27",
+      "family": "Haiku",
+      "amount": 1.06
+    },
+    {
+      "date": "2026-06-28",
+      "family": "Opus",
+      "amount": 18.97
+    },
+    {
+      "date": "2026-06-28",
+      "family": "Sonnet",
+      "amount": 19.11
+    },
+    {
+      "date": "2026-06-28",
+      "family": "Haiku",
+      "amount": 0.59
+    },
+    {
+      "date": "2026-06-29",
+      "family": "Opus",
+      "amount": 205.06
+    },
+    {
+      "date": "2026-06-29",
+      "family": "Sonnet",
+      "amount": 101.03
+    },
+    {
+      "date": "2026-06-29",
+      "family": "Haiku",
+      "amount": 2.97
+    },
+    {
+      "date": "2026-06-30",
+      "family": "Opus",
+      "amount": 364.91
+    },
+    {
+      "date": "2026-06-30",
+      "family": "Sonnet",
+      "amount": 144.45
+    },
+    {
+      "date": "2026-06-30",
+      "family": "Haiku",
+      "amount": 2.3
+    }
+  ],
+  "activeUsers": [
+    {
+      "date": "2026-02-01",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-02",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-03",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-04",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-05",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-06",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-07",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-08",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-09",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-10",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-11",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 0
+    },
+    {
+      "date": "2026-02-12",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-13",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-14",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-15",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-16",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-17",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-18",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-19",
+      "dau": 0,
+      "wau": 0,
+      "mau": 0,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-20",
+      "dau": 3,
+      "wau": 3,
+      "mau": 3,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-21",
+      "dau": 7,
+      "wau": 7,
+      "mau": 7,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-22",
+      "dau": 4,
+      "wau": 8,
+      "mau": 8,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-23",
+      "dau": 9,
+      "wau": 10,
+      "mau": 10,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-24",
+      "dau": 10,
+      "wau": 12,
+      "mau": 12,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-25",
+      "dau": 11,
+      "wau": 13,
+      "mau": 13,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-26",
+      "dau": 12,
+      "wau": 15,
+      "mau": 15,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-27",
+      "dau": 12,
+      "wau": 16,
+      "mau": 16,
+      "seats": 51
+    },
+    {
+      "date": "2026-02-28",
+      "dau": 6,
+      "wau": 16,
+      "mau": 16,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-01",
+      "dau": 2,
+      "wau": 16,
+      "mau": 16,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-02",
+      "dau": 12,
+      "wau": 16,
+      "mau": 16,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-03",
+      "dau": 13,
+      "wau": 16,
+      "mau": 16,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-04",
+      "dau": 10,
+      "wau": 16,
+      "mau": 16,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-05",
+      "dau": 9,
+      "wau": 15,
+      "mau": 16,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-06",
+      "dau": 11,
+      "wau": 15,
+      "mau": 17,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-07",
+      "dau": 8,
+      "wau": 16,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-08",
+      "dau": 5,
+      "wau": 17,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-09",
+      "dau": 14,
+      "wau": 17,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-10",
+      "dau": 12,
+      "wau": 17,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-11",
+      "dau": 12,
+      "wau": 16,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-12",
+      "dau": 11,
+      "wau": 17,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-13",
+      "dau": 10,
+      "wau": 17,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-14",
+      "dau": 6,
+      "wau": 17,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-15",
+      "dau": 4,
+      "wau": 17,
+      "mau": 18,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-16",
+      "dau": 13,
+      "wau": 18,
+      "mau": 19,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-17",
+      "dau": 11,
+      "wau": 18,
+      "mau": 19,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-18",
+      "dau": 14,
+      "wau": 17,
+      "mau": 19,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-19",
+      "dau": 14,
+      "wau": 16,
+      "mau": 19,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-20",
+      "dau": 12,
+      "wau": 16,
+      "mau": 19,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-21",
+      "dau": 7,
+      "wau": 16,
+      "mau": 19,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-22",
+      "dau": 4,
+      "wau": 16,
+      "mau": 19,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-23",
+      "dau": 15,
+      "wau": 18,
+      "mau": 20,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-24",
+      "dau": 14,
+      "wau": 19,
+      "mau": 21,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-25",
+      "dau": 15,
+      "wau": 20,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-26",
+      "dau": 14,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-27",
+      "dau": 15,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-28",
+      "dau": 7,
+      "wau": 19,
+      "mau": 21,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-29",
+      "dau": 6,
+      "wau": 19,
+      "mau": 21,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-30",
+      "dau": 13,
+      "wau": 18,
+      "mau": 21,
+      "seats": 51
+    },
+    {
+      "date": "2026-03-31",
+      "dau": 15,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-01",
+      "dau": 15,
+      "wau": 20,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-02",
+      "dau": 13,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-03",
+      "dau": 10,
+      "wau": 18,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-04",
+      "dau": 5,
+      "wau": 18,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-05",
+      "dau": 6,
+      "wau": 18,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-06",
+      "dau": 13,
+      "wau": 18,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-07",
+      "dau": 13,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-08",
+      "dau": 16,
+      "wau": 18,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-09",
+      "dau": 12,
+      "wau": 18,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-10",
+      "dau": 14,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-11",
+      "dau": 7,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-12",
+      "dau": 6,
+      "wau": 19,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-13",
+      "dau": 14,
+      "wau": 20,
+      "mau": 22,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-14",
+      "dau": 17,
+      "wau": 21,
+      "mau": 23,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-15",
+      "dau": 14,
+      "wau": 19,
+      "mau": 23,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-16",
+      "dau": 16,
+      "wau": 21,
+      "mau": 23,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-17",
+      "dau": 17,
+      "wau": 21,
+      "mau": 23,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-18",
+      "dau": 7,
+      "wau": 21,
+      "mau": 23,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-19",
+      "dau": 5,
+      "wau": 21,
+      "mau": 23,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-20",
+      "dau": 18,
+      "wau": 22,
+      "mau": 24,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-21",
+      "dau": 20,
+      "wau": 24,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-22",
+      "dau": 18,
+      "wau": 24,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-23",
+      "dau": 20,
+      "wau": 22,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-24",
+      "dau": 20,
+      "wau": 22,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-25",
+      "dau": 14,
+      "wau": 22,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-26",
+      "dau": 8,
+      "wau": 22,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-27",
+      "dau": 16,
+      "wau": 23,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-28",
+      "dau": 16,
+      "wau": 23,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-29",
+      "dau": 19,
+      "wau": 23,
+      "mau": 25,
+      "seats": 51
+    },
+    {
+      "date": "2026-04-30",
+      "dau": 20,
+      "wau": 23,
+      "mau": 26,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-01",
+      "dau": 18,
+      "wau": 23,
+      "mau": 26,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-02",
+      "dau": 10,
+      "wau": 22,
+      "mau": 26,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-03",
+      "dau": 7,
+      "wau": 23,
+      "mau": 26,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-04",
+      "dau": 16,
+      "wau": 24,
+      "mau": 26,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-05",
+      "dau": 15,
+      "wau": 24,
+      "mau": 26,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-06",
+      "dau": 19,
+      "wau": 26,
+      "mau": 28,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-07",
+      "dau": 20,
+      "wau": 25,
+      "mau": 28,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-08",
+      "dau": 23,
+      "wau": 25,
+      "mau": 28,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-09",
+      "dau": 13,
+      "wau": 25,
+      "mau": 28,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-10",
+      "dau": 6,
+      "wau": 25,
+      "mau": 28,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-11",
+      "dau": 19,
+      "wau": 26,
+      "mau": 28,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-12",
+      "dau": 22,
+      "wau": 28,
+      "mau": 30,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-13",
+      "dau": 24,
+      "wau": 28,
+      "mau": 30,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-14",
+      "dau": 22,
+      "wau": 30,
+      "mau": 32,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-15",
+      "dau": 22,
+      "wau": 30,
+      "mau": 32,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-16",
+      "dau": 13,
+      "wau": 30,
+      "mau": 32,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-17",
+      "dau": 7,
+      "wau": 30,
+      "mau": 32,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-18",
+      "dau": 22,
+      "wau": 31,
+      "mau": 32,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-19",
+      "dau": 23,
+      "wau": 32,
+      "mau": 33,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-20",
+      "dau": 26,
+      "wau": 30,
+      "mau": 33,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-21",
+      "dau": 25,
+      "wau": 32,
+      "mau": 33,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-22",
+      "dau": 24,
+      "wau": 33,
+      "mau": 34,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-23",
+      "dau": 14,
+      "wau": 32,
+      "mau": 34,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-24",
+      "dau": 10,
+      "wau": 32,
+      "mau": 34,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-25",
+      "dau": 12,
+      "wau": 32,
+      "mau": 34,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-26",
+      "dau": 27,
+      "wau": 34,
+      "mau": 36,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-27",
+      "dau": 28,
+      "wau": 37,
+      "mau": 38,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-28",
+      "dau": 31,
+      "wau": 37,
+      "mau": 39,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-29",
+      "dau": 28,
+      "wau": 37,
+      "mau": 40,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-30",
+      "dau": 15,
+      "wau": 37,
+      "mau": 40,
+      "seats": 51
+    },
+    {
+      "date": "2026-05-31",
+      "dau": 13,
+      "wau": 38,
+      "mau": 40,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-01",
+      "dau": 26,
+      "wau": 38,
+      "mau": 40,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-02",
+      "dau": 27,
+      "wau": 39,
+      "mau": 41,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-03",
+      "dau": 23,
+      "wau": 39,
+      "mau": 41,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-04",
+      "dau": 31,
+      "wau": 40,
+      "mau": 43,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-05",
+      "dau": 25,
+      "wau": 40,
+      "mau": 43,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-06",
+      "dau": 13,
+      "wau": 40,
+      "mau": 43,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-07",
+      "dau": 7,
+      "wau": 40,
+      "mau": 43,
+      "seats": 50
+    },
+    {
+      "date": "2026-06-08",
+      "dau": 28,
+      "wau": 40,
+      "mau": 43,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-09",
+      "dau": 30,
+      "wau": 40,
+      "mau": 44,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-10",
+      "dau": 30,
+      "wau": 40,
+      "mau": 44,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-11",
+      "dau": 32,
+      "wau": 38,
+      "mau": 45,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-12",
+      "dau": 29,
+      "wau": 40,
+      "mau": 45,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-13",
+      "dau": 14,
+      "wau": 40,
+      "mau": 45,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-14",
+      "dau": 11,
+      "wau": 40,
+      "mau": 45,
+      "seats": 51
+    },
+    {
+      "date": "2026-06-15",
+      "dau": 35,
+      "wau": 42,
+      "mau": 46,
+      "seats": 53
+    },
+    {
+      "date": "2026-06-16",
+      "dau": 34,
+      "wau": 43,
+      "mau": 46,
+      "seats": 53
+    },
+    {
+      "date": "2026-06-17",
+      "dau": 31,
+      "wau": 42,
+      "mau": 46,
+      "seats": 53
+    },
+    {
+      "date": "2026-06-18",
+      "dau": 31,
+      "wau": 43,
+      "mau": 46,
+      "seats": 53
+    },
+    {
+      "date": "2026-06-19",
+      "dau": 27,
+      "wau": 43,
+      "mau": 46,
+      "seats": 54
+    },
+    {
+      "date": "2026-06-20",
+      "dau": 13,
+      "wau": 43,
+      "mau": 46,
+      "seats": 55
+    },
+    {
+      "date": "2026-06-21",
+      "dau": 9,
+      "wau": 43,
+      "mau": 46,
+      "seats": 57
+    },
+    {
+      "date": "2026-06-22",
+      "dau": 30,
+      "wau": 42,
+      "mau": 46,
+      "seats": 57
+    },
+    {
+      "date": "2026-06-23",
+      "dau": 38,
+      "wau": 44,
+      "mau": 47,
+      "seats": 57
+    },
+    {
+      "date": "2026-06-24",
+      "dau": 35,
+      "wau": 44,
+      "mau": 48,
+      "seats": 57
+    },
+    {
+      "date": "2026-06-25",
+      "dau": 34,
+      "wau": 46,
+      "mau": 49,
+      "seats": 57
+    },
+    {
+      "date": "2026-06-26",
+      "dau": 29,
+      "wau": 46,
+      "mau": 49,
+      "seats": 57
+    },
+    {
+      "date": "2026-06-27",
+      "dau": 15,
+      "wau": 45,
+      "mau": 49,
+      "seats": 59
+    },
+    {
+      "date": "2026-06-28",
+      "dau": 6,
+      "wau": 44,
+      "mau": 49,
+      "seats": 59
+    }
+  ],
+  "topUsersMonth": [],
+  "topUsersAllTime": [
+    {
+      "name": "Charles C.",
+      "amount": 6793.47
+    },
+    {
+      "name": "Manny D.",
+      "amount": 5296
+    },
+    {
+      "name": "Andrew S.",
+      "amount": 4678.9
+    },
+    {
+      "name": "Eric L.",
+      "amount": 3333.62
+    },
+    {
+      "name": "Richard K.",
+      "amount": 2219.93
+    },
+    {
+      "name": "Tom D.",
+      "amount": 2161.22
+    },
+    {
+      "name": "Steve F.",
+      "amount": 1865.78
+    },
+    {
+      "name": "Ganesh R.",
+      "amount": 1699.35
+    },
+    {
+      "name": "Blake R.",
+      "amount": 1072.06
+    },
+    {
+      "name": "Mohammad S.",
+      "amount": 1021.72
+    }
+  ],
+  "licenses": {
+    "assignedSeats": 59,
+    "activeLast30": 51,
+    "unusedLast30": 8,
+    "inactiveUsers": [
+      {
+        "name": "Vaibhav K.",
+        "totalSpend": 249.09
+      },
+      {
+        "name": "Joseph H.",
+        "totalSpend": 143.7
+      }
+    ]
+  },
+  "metrics": {
+    "totalActual": 38494.43,
+    "totalTopups": 131,
+    "currentMonthProjected": 16080.6,
+    "currentDailyBurn": 0,
+    "lastProjectedMonth": "2026-09",
+    "lastProjectedMonthTotal": 14151,
+    "cumulativeProjected": 44854.3,
+    "annualizedRunRate": 0,
+    "avgDaysBetweenTopupsLast4Weeks": null,
+    "twoWeekDailyRate": 536.02
+  },
+  "methodology": {
+    "currentMonthMethod": "trailing-two-week-run-rate",
+    "rollingWindowDays": 14,
+    "twoWeekDailyRate": 536.02,
+    "currentMonthActualToDate": 0,
+    "futureMonthMethod": "trailing-45-day-run-rate",
+    "growthWindowDays": 45,
+    "growthWindowDailyRate": 471.7,
+    "note": "Current month (Jul 2026) is projected as month-to-date actual ($0) plus the trailing 14-day run rate ($536.02/day) over the 30 day(s) left in the month. Future months (through Sep 2026) are projected at the average daily run rate over the trailing 45 days ($471.7/day) applied to each month's day count, so the forecast tracks the recent run rate rather than an assumed monthly escalation. Projections are recomputed fresh from actuals each week."
+  },
+  "analysis": "Anthropic token spend totals $38,494 across 131 days of metered usage from Feb 20, 2026 through Jun 30, 2026. Since the Jun 25, 2026 report, $2,788 of additional usage has posted. Spend is running near $472/day (about $14,151/month) and is easing about 10% versus Jun 2026. Jul 2026 is projected to finish around $16,081 ($0 booked to date), with the trailing 45-day run rate putting $14,623 in Aug 2026, $14,151 in Sep 2026. Cumulative spend through Sep 2026 is projected at roughly $83,349."
+}
