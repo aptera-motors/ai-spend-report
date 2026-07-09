@@ -37,7 +37,14 @@ const kinds = new Set(report.monthly.map((m) => m.kind));
     <p class="chart-sub">{report.monthly[0].label} through {report.monthly[report.monthly.length - 1].label}</p>
     <div class="flex flex-wrap gap-5 mb-3 text-xs text-ink-soft">
       <span><i class="legend-dot bg-actual"></i>Actual</span>
-      {kinds.has("proj") && <span><i class="legend-dot bg-proj-full"></i>Projected — 45-day run rate</span>}
+      {kinds.has("proj") && (
+        <span>
+          <i class="legend-dot bg-proj-full"></i>
+          {report.methodology.futureMonthMethod === "damped-weekly-growth"
+            ? "Projected — damped growth"
+            : "Projected — 45-day run rate"}
+        </span>
+      )}
       {kinds.has("proj-full") && <span><i class="legend-dot bg-proj-full"></i>Projected — full growth</span>}
       {kinds.has("proj-half") && <span><i class="legend-dot bg-proj-half"></i>Projected — half growth</span>}
       {budget !== null && <span><i class="legend-dot bg-budget"></i>Budget threshold</span>}

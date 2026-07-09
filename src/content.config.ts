@@ -91,6 +91,8 @@ const reports = defineCollection({
       annualizedRunRate: z.number(),
       avgDaysBetweenTopupsLast4Weeks: z.number().nullable(),
       twoWeekDailyRate: z.number().nullable().optional(),
+      // "all seats active at current per-user intensity" weekday reference line
+      saturationDailyReference: z.number().nullable().optional(),
     }),
     methodology: z.object({
       // current-month basis (trailing two-week run rate)
@@ -98,10 +100,18 @@ const reports = defineCollection({
       rollingWindowDays: z.number().optional(),
       twoWeekDailyRate: z.number().nullable().optional(),
       currentMonthActualToDate: z.number().optional(),
-      // future-month basis (trailing 45-day run rate)
+      // future-month basis (trailing 45-day run rate; or damped-weekly-growth)
       futureMonthMethod: z.string().optional(),
       growthWindowDays: z.number().optional(),
       growthWindowDailyRate: z.number().nullable().optional(),
+      // damped-growth model fields
+      weekdayLookback: z.number().optional(),
+      weekdayLevel: z.number().optional(),
+      growthFitWeeks: z.number().optional(),
+      weeklyGrowthRate: z.number().optional(), // % per week
+      dampingPhi: z.number().optional(),
+      saturationWeekdayLevel: z.number().nullable().optional(),
+      perActiveUserWeekday: z.number().nullable().optional(),
       // legacy growth-increment fields (archived reports)
       basisMonths: z.array(z.string()).optional(),
       fullIncrement: z.number().optional(),

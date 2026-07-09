@@ -51,7 +51,11 @@ const lastProjLabel = lastProjRow?.label ?? metrics.lastProjectedMonth;
       {fmtUsd(metrics.lastProjectedMonthTotal)}
     </div>
     <div class="text-[11px] text-[var(--color-faint)] mt-1">
-      {report.methodology.growthWindowDailyRate != null ? "45-day run-rate pace" : "half-growth pace"}
+      {report.methodology.futureMonthMethod === "damped-weekly-growth"
+        ? `damped-growth pace · ${report.methodology.weeklyGrowthRate ?? 0}%/wk`
+        : report.methodology.growthWindowDailyRate != null
+          ? "45-day run-rate pace"
+          : "half-growth pace"}
     </div>
   </div>
 

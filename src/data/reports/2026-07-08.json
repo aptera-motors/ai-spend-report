@@ -2,7 +2,7 @@
   "date": "2026-07-08",
   "source": "analytics",
   "title": "Report for Jul 8, 2026",
-  "generatedAt": "2026-07-09T06:36:38.831Z",
+  "generatedAt": "2026-07-09T07:15:52.888Z",
   "dataStart": "2026-02-20",
   "dataEnd": "2026-07-07",
   "topups": [
@@ -625,30 +625,30 @@
       "label": "Jul 2026",
       "kind": "proj",
       "topups": null,
-      "total": 14617.68,
       "momChange": null,
-      "dailyBurn": 471.54,
-      "cumulative": 53112.11
+      "total": 17639.07,
+      "dailyBurn": 569,
+      "cumulative": 56133.5
     },
     {
       "month": "2026-08",
       "label": "Aug 2026",
       "kind": "proj",
       "topups": null,
-      "total": 15236.81,
-      "momChange": null,
-      "dailyBurn": 491.51,
-      "cumulative": 68348.92
+      "momChange": 1994.65,
+      "total": 19633.72,
+      "dailyBurn": 633.35,
+      "cumulative": 75767.22
     },
     {
       "month": "2026-09",
       "label": "Sep 2026",
       "kind": "proj",
       "topups": null,
-      "total": 14745.3,
-      "momChange": null,
-      "dailyBurn": 491.51,
-      "cumulative": 83094.22
+      "momChange": 1578.26,
+      "total": 21211.98,
+      "dailyBurn": 707.07,
+      "cumulative": 96979.2
     }
   ],
   "weekly": [
@@ -4261,24 +4261,32 @@
   "metrics": {
     "totalActual": 42292.45,
     "totalTopups": 138,
-    "currentMonthProjected": 14617.68,
+    "currentMonthProjected": 17639.07,
     "currentDailyBurn": 474.75,
     "lastProjectedMonth": "2026-09",
-    "lastProjectedMonthTotal": 14745.3,
-    "cumulativeProjected": 44599.79,
+    "lastProjectedMonthTotal": 21211.98,
+    "cumulativeProjected": 58484.77,
     "annualizedRunRate": 173283.75,
     "avgDaysBetweenTopupsLast4Weeks": null,
-    "twoWeekDailyRate": 470.42
+    "twoWeekDailyRate": 470.42,
+    "saturationDailyReference": 782.6
   },
   "methodology": {
-    "currentMonthMethod": "trailing-two-week-run-rate",
+    "currentMonthMethod": "day-of-week-profile + damped-growth",
     "rollingWindowDays": 14,
     "twoWeekDailyRate": 470.42,
     "currentMonthActualToDate": 3798.02,
-    "futureMonthMethod": "trailing-45-day-run-rate",
+    "futureMonthMethod": "damped-weekly-growth",
     "growthWindowDays": 45,
     "growthWindowDailyRate": 491.51,
-    "note": "Current month (Jul 2026) is projected as month-to-date actual ($3,798.02) plus the trailing 14-day run rate ($470.42/day) over the 23 day(s) left in the month. Future months (through Sep 2026) are projected at the average daily run rate over the trailing 45 days ($491.51/day) applied to each month's day count, so the forecast tracks the recent run rate rather than an assumed monthly escalation. Projections are recomputed fresh from actuals each week."
+    "weekdayLookback": 4,
+    "weekdayLevel": 662.31,
+    "growthFitWeeks": 8,
+    "weeklyGrowthRate": 5.3,
+    "dampingPhi": 0.85,
+    "saturationWeekdayLevel": 782.6,
+    "perActiveUserWeekday": 12.04,
+    "note": "Jul 2026 is projected as month-to-date actual ($3,798.02) plus a day-of-week spend profile (avg of the last 4 of each weekday, ~$662.31/weekday) applied to the 23 remaining day(s). Future months (through Sep 2026) extend that profile at the fitted weekly growth rate of 5.3%/week (log-linear fit over the last 8 full weeks), damped by φ=0.85 per week so the growth increment decays toward zero rather than compounding without bound. Known US holidays are modeled at Sunday level. Sanity check: if all 65 assigned seats were as active as today's 55 active users, weekday spend would be ~$782.6/day. Projections are recomputed fresh from actuals each week; realized accuracy is tracked on the site as projected months close out."
   },
-  "analysis": "Anthropic token spend totals $42,292 across 138 days of metered usage from Feb 20, 2026 through Jul 7, 2026. Since the Jul 1, 2026 report, $3,798 of additional usage has posted. Spend is running near $492/day (about $14,745/month) and is easing about 7% versus Jun 2026. Jul 2026 is projected to finish around $14,618 ($3,798 booked to date), with the trailing 45-day run rate putting $15,237 in Aug 2026, $14,745 in Sep 2026. Cumulative spend through Sep 2026 is projected at roughly $83,094."
+  "analysis": "Methodology update (Jul 8, 2026): projections now use a day-of-week spend profile extended at the fitted weekly growth rate with damping, replacing the flat trailing run-rate. The prior method assumed a constant daily rate, which structurally under-projected a spend base that has been compounding week over week — May and June both finished roughly 10%+ above their run-rate projections, and future months no longer step down on calendar-day count alone. Forward figures are correspondingly higher and now trend upward month over month. Anthropic token spend totals $42,292 across 138 days of metered usage from Feb 20, 2026 through Jul 7, 2026. Since the Jul 1, 2026 report, $3,798 of additional usage has posted. Recent spend runs near $662/weekday (roughly $19,869/month) and is growing about 5.3%/week. Jul 2026 is projected to finish around $17,639 ($3,798 booked to date), with the model putting $19,634 in Aug 2026, $21,212 in Sep 2026. Cumulative spend through Sep 2026 is projected at roughly $96,979."
 }
